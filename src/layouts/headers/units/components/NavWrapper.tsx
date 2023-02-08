@@ -1,94 +1,55 @@
-import React from "react";
+import * as S from "../styles/NavWrapper.styles";
+import { GiHamburgerMenu } from "react-icons/gi";
+import NavWrapperSubMenu from "./NavWrapperSubMenu";
+
+const nav = [
+  {
+    name: "출산/수유",
+    subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
+  },
+  { name: "외출", subMenu: ["장난감", "출산육아", "유모차", "도서"] },
+  { name: "바디케어", subMenu: ["페이스", "아이", "립", "파운데이션"] },
+  {
+    name: "세제/주방",
+    subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
+  },
+  {
+    name: "침구/가구",
+    subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
+  },
+  {
+    name: "놀이용품",
+    subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
+  },
+  {
+    name: "장난감",
+    subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
+  },
+  { name: "신상품" },
+  { name: "베스트" },
+  { name: "브랜드" },
+  { name: "이벤트" },
+];
 
 export default function NavWrapper() {
   return (
-    <nav>
+    <S.NavWrapper>
       <div className="inner">
-        <ul>
+        <ul className="menu">
           <li>
             <a href="">
-              <em>햄버거버튼</em>
+              <GiHamburgerMenu className="menu-icon" />
             </a>
           </li>
-          <li>
-            <a href="">
-              <em>출산/수유</em>
-            </a>
-            <div className="drop_sub">
-              <ul>
-                <li>
-                  <a href="">탑</a>
-                </li>
-                <li>
-                  <a href="">아우터</a>
-                </li>
-                <li>
-                  <a href="">드레스</a>
-                </li>
-                <li>
-                  <a href="">스커트</a>
-                </li>
-                <li>
-                  <a href="">팬츠</a>
-                </li>
-              </ul>
-              <div className="image">
-                <img src="" alt="" />
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="">
-              <em>외출</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>바디케어</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>세제/주방</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>침구/가구</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>놀이용품</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>장난감</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>신상품</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>베스트</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>브랜드</em>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <em>이벤트</em>
-            </a>
-          </li>
+          {nav.map((el, index) => (
+            <NavWrapperSubMenu
+              key={index}
+              name={el.name}
+              subMenu={el.subMenu}
+            />
+          ))}
         </ul>
       </div>
-    </nav>
+    </S.NavWrapper>
   );
 }
