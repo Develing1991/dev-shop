@@ -85,6 +85,7 @@ export default css`
 
 	input {
 		outline: none;
+    border: none;
 	}
 
 	textarea {
