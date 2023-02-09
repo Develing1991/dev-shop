@@ -3,32 +3,33 @@ import AdBanner from "./components/banners/AdBanner";
 
 import Banner from "./components/banners/Banner";
 import ImageCard from "./components/best/ImageCard";
-import Article from "./components/commons/Article";
+import Section from "./components/commons/Section";
 import TitleGroup from "./components/commons/TitleGroup";
 export default function DefaultMain() {
   return (
     <main>
+      {/* 슬라이드 배너 */}
       <Banner />
       {/* 베스트 */}
-      <Article>
+      <Section>
         <>
           <TitleGroup title="베스트 카테고리" />
           <ImageCard />
         </>
-      </Article>
+      </Section>
       {/* 광고 배너 */}
-      <Article>
+      <Section>
         <AdBanner />
-      </Article>
+      </Section>
       {/* 신규상품 */}
-      <Article>
+      <Section>
         <>
           <TitleGroup
             title="신규 상품"
             subTitle="라라베베의 신규 상품을 먼저 만나보세요."
           />
         </>
-      </Article>
+      </Section>
     </main>
   );
 }
