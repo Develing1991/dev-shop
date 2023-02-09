@@ -6,6 +6,7 @@ interface ICardItem {
   discount: string;
   rate: string;
   shipping: string;
+  center: boolean;
 }
 export default function CardItem({
   image,
@@ -14,9 +15,10 @@ export default function CardItem({
   discount,
   rate,
   shipping,
+  center = false,
 }: Partial<ICardItem>) {
   return (
-    <S.CardItem className="card-item">
+    <S.CardItem className="card-item" center={center}>
       <div className="image-area">
         <a href="#">
           <img src={image} alt="이미지1" />
@@ -30,7 +32,7 @@ export default function CardItem({
       </div>
       <div className="card-actions">
         <div className="shipping">{shipping}</div>
-        <S.HeartIcon />
+        <S.HeartIcon className="heart" />
       </div>
     </S.CardItem>
   );

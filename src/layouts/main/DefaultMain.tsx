@@ -7,6 +7,7 @@ import ImageCard from "./components/best/ImageCard";
 import Section from "./components/commons/Section";
 import TitleGroup from "./components/commons/TitleGroup";
 import NewProducts from "./components/new/NewProducts";
+import RecommendProducts from "./components/recommend/RecommendProducts";
 import SaleProducts from "./components/sale/SaleProducts";
 export default function DefaultMain() {
   return (
@@ -45,8 +46,19 @@ export default function DefaultMain() {
           </SaleProducts>
         </>
       </Section>
+      {/* 채널 배너 */}
       <Section>
         <Channels />
+      </Section>
+      {/* 추천상품 */}
+      <Section>
+        <>
+          <TitleGroup
+            title="MD 추천상품"
+            subTitle="MD도 인정한 라라베베의 추천 상품!"
+          />
+          <RecommendProducts />
+        </>
       </Section>
     </main>
   );

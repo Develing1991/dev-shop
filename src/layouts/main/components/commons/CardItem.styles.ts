@@ -6,6 +6,8 @@ export const CardItem = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+  align-items: ${({ center }: { center: boolean }) =>
+    center ? "center" : "flex-start"};
   .image-area {
     max-width: 320px;
     margin-bottom: 10px;
@@ -41,7 +43,13 @@ export const CardItem = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: ${({ center }: { center: boolean }) =>
+      center ? "center" : "space-between"};
+    position: relative;
+    .heart {
+      position: absolute;
+      right: 0;
+    }
   }
   .shipping {
     margin-top: 5px;

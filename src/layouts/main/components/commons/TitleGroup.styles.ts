@@ -25,6 +25,7 @@ export const TitleGroup = styled.div`
   }
 
   p {
+    padding-top: 10px;
     font-size: var(--text-base);
   }
 `;

@@ -14,6 +14,7 @@ export default function SaleProducts({ children }: { children: JSX.Element }) {
             discount="26,000"
             rate="27"
             shipping="무료배송"
+            center
           />
         </li>
         <li>
@@ -24,6 +25,7 @@ export default function SaleProducts({ children }: { children: JSX.Element }) {
             discount="26,000"
             rate="27"
             shipping="무료배송"
+            center
           />
         </li>
         <li>
@@ -34,6 +36,7 @@ export default function SaleProducts({ children }: { children: JSX.Element }) {
             discount="26,000"
             rate="27"
             shipping="무료배송"
+            center
           />
         </li>
       </ul>

@@ -12,15 +12,9 @@ export const SaleProducts = styled.div`
   .title-group {
     margin-top: 0;
   }
-  .card-item {
-    align-items: center;
-  }
+
   .image-area {
     border-radius: 50%;
     overflow: hidden;
-  }
-  .card-actions {
-    gap: 60px;
-    justify-content: flex-end;
   }
 `;
