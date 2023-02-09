@@ -34,6 +34,7 @@ export default css`
     --color-gray-2:#767676;
     --color-gray-3:#666;
     --color-gray-4:#444;
+    --color-gray-5:#333;
     
   }
 

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Contacts from "./components/Contacts/Contacts";
+import Coperation from "./components/Coperation/Coperation";
 import Terms from "./components/Terms/Terms";
 export default function DefaultFooter() {
   return (
@@ -7,6 +8,7 @@ export default function DefaultFooter() {
       <div className="inner">
         <Contacts />
         <Terms />
+        <Coperation />
       </div>
     </Footer>
   );
