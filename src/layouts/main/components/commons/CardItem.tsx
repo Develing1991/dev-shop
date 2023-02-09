@@ -16,7 +16,7 @@ export default function CardItem({
   shipping,
 }: Partial<ICardItem>) {
   return (
-    <S.CardItem>
+    <S.CardItem className="card-item">
       <div className="image-area">
         <a href="#">
           <img src={image} alt="이미지1" />

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { AiOutlineHeart } from "react-icons/ai";
+
 export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@ export const CardItem = styled.div`
   gap: 5px;
   .image-area {
     max-width: 320px;
+    margin-bottom: 10px;
   }
   .image-area:hover {
     border: 1px solid var(--color-gray-0);

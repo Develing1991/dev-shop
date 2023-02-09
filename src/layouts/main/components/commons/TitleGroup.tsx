@@ -6,7 +6,7 @@ interface ITitleGroup {
 }
 export default function TitleGroup({ title, subTitle }: ITitleGroup) {
   return (
-    <S.TitleGroup>
+    <S.TitleGroup className="title-group">
       <h3>{title}</h3>
       {subTitle && <p>{subTitle}</p>}
     </S.TitleGroup>

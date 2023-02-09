@@ -6,6 +6,7 @@ import ImageCard from "./components/best/ImageCard";
 import Section from "./components/commons/Section";
 import TitleGroup from "./components/commons/TitleGroup";
 import NewProducts from "./components/new/NewProducts";
+import SaleProducts from "./components/sale/SaleProducts";
 export default function DefaultMain() {
   return (
     <main>
@@ -30,6 +31,16 @@ export default function DefaultMain() {
             subTitle="라라베베의 신규 상품을 먼저 만나보세요."
           />
           <NewProducts />
+        </>
+      </Section>
+      <Section>
+        <>
+          <SaleProducts>
+            <TitleGroup
+              title="세일 상품"
+              subTitle="라라베베의 세일 상품입니다."
+            />
+          </SaleProducts>
         </>
       </Section>
     </main>
