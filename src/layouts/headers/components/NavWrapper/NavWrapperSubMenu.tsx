@@ -9,7 +9,9 @@ export default function NavWrapperSubMenu(props: INavWrapperSubMenu) {
   const { name, subMenu } = props;
 
   const onMouseOverMenu = (event: SyntheticEvent<HTMLLIElement>) => {
-    setActive(() => event.type === "mouseover");
+    if (window.innerWidth > 1024) {
+      setActive(() => event.type === "mouseover");
+    }
   };
 
   return (

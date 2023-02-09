@@ -1,6 +1,10 @@
 import * as S from "./LogoWrapper.styles";
-import { BiSearch } from "react-icons/bi";
+import { useRef } from "react";
 export default function LogoWrapper() {
+  const searchRef = useRef<HTMLInputElement>(null);
+  const aaa = () => {
+    searchRef.current?.focus();
+  };
   return (
     <S.LogoWrapper>
       <div className="inner">
@@ -12,7 +16,7 @@ export default function LogoWrapper() {
             />
           </a>
         </h1>
-        <div className="search">
+        <div className="search-form">
           <form>
             <label htmlFor="search" />
             <input
@@ -22,10 +26,15 @@ export default function LogoWrapper() {
               autoComplete="false"
             />
             <button title="검색버튼">
-              <BiSearch className="icon" />
+              <S.SearchIcon />
             </button>
           </form>
         </div>
+        <S.IconBox>
+          <S.RSearchIcon onClick={aaa} />
+          <S.RShopIcon />
+          <S.RMenuIcon className="menu-icon" />
+        </S.IconBox>
       </div>
     </S.LogoWrapper>
   );

@@ -1,5 +1,4 @@
 import * as S from "./NavWrapper.styles";
-import { GiHamburgerMenu } from "react-icons/gi";
 import NavWrapperSubMenu from "./NavWrapperSubMenu";
 
 const nav = [
@@ -36,9 +35,9 @@ export default function NavWrapper() {
     <S.NavWrapper>
       <div className="inner">
         <ul className="menu">
-          <li>
-            <a href="">
-              <GiHamburgerMenu className="menu-icon" />
+          <li className="menu-icon">
+            <a href="#">
+              <S.MenuIcon />
             </a>
           </li>
           {nav.map((el, index) => (

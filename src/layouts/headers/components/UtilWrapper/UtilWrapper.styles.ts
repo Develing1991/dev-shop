@@ -6,9 +6,13 @@ export const UtilWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
   background-color: #fbfbfb;
 
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
   .inner {
     max-width: 1024px;
     margin: auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,11 +25,12 @@ export const UtilWrapper = styled.div`
   }
 
   .menu1 li a {
-    padding: 3px 10px;
+    padding: 3px 10px 3px 0;
     font-weight: var(--font-regular);
   }
 
   .menu2 li a {
-    padding: 3px 10px;
+    padding: 3px 0px 3px 10px;
+    margin-left: 10px;
   }
 `;

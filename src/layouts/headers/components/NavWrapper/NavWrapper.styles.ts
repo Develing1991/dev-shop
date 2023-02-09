@@ -1,8 +1,11 @@
 import styled from "@emotion/styled";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export const NavWrapper = styled.nav`
-  border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   .inner {
     max-width: 1024px;
     margin: auto;
@@ -13,10 +16,21 @@ export const NavWrapper = styled.nav`
   }
 
   .inner > .menu {
-    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @media screen and (max-width: 1024px) {
+      gap: 20px;
+      overflow-x: auto;
+      justify-content: space-between;
+    }
+  }
+
+  .inner > .menu .menu-icon {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   .inner > .menu > li {
@@ -24,10 +38,11 @@ export const NavWrapper = styled.nav`
     cursor: pointer;
     padding: 8px;
     position: relative;
+    flex-shrink: 0;
   }
 
-  .menu-icon {
-    font-size: var(--text-2xl);
+  .inner > .menu > li:hover > a {
+    color: var(--color-pink);
   }
 
   .sub-menu {
@@ -79,4 +94,8 @@ export const NavWrapper = styled.nav`
     transition: all 0.3s;
     opacity: 0.7;
   }
+`;
+
+export const MenuIcon = styled(GiHamburgerMenu)`
+  font-size: var(--text-2xl);
 `;
