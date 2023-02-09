@@ -4,5 +4,6 @@ export const Section = styled.section`
   .inner {
     max-width: 1024px;
     margin: auto;
+    padding: 0 20px;
   }
 `;

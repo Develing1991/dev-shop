@@ -2,6 +2,7 @@ import React from "react";
 import AdBanner from "./components/banners/AdBanner";
 
 import Banner from "./components/banners/Banner";
+import Channels from "./components/banners/Channels";
 import ImageCard from "./components/best/ImageCard";
 import Section from "./components/commons/Section";
 import TitleGroup from "./components/commons/TitleGroup";
@@ -33,6 +34,7 @@ export default function DefaultMain() {
           <NewProducts />
         </>
       </Section>
+      {/* 세일상품 */}
       <Section>
         <>
           <SaleProducts>
@@ -42,6 +44,9 @@ export default function DefaultMain() {
             />
           </SaleProducts>
         </>
+      </Section>
+      <Section>
+        <Channels />
       </Section>
     </main>
   );

@@ -9,7 +9,4 @@ export const NewProducts = styled.div`
     align-items: center;
     gap: var(--gap-size);
   }
-  .right-product {
-    flex-shrink: 0.5;
-  }
 `;
