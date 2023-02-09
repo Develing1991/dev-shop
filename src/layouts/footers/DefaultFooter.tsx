@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import Contacts from "./components/Contacts/Contacts";
+import Terms from "./components/Terms/Terms";
 export default function DefaultFooter() {
   return (
     <Footer>
       <div className="inner">
         <Contacts />
+        <Terms />
       </div>
     </Footer>
   );

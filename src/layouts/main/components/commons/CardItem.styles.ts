@@ -49,6 +49,7 @@ export const CardItem = styled.div`
     .heart {
       position: absolute;
       right: 0;
+      color: var(--color-gray-0);
     }
   }
   .shipping {
