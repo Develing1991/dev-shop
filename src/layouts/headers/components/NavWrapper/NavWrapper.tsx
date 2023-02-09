@@ -1,4 +1,4 @@
-import * as S from "../styles/NavWrapper.styles";
+import * as S from "./NavWrapper.styles";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavWrapperSubMenu from "./NavWrapperSubMenu";
 

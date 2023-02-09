@@ -1,4 +1,4 @@
-import * as S from "../styles/UtilWrapper.styles";
+import * as S from "./UtilWrapper.styles";
 export default function UtilWrapper() {
   return (
     <S.UtilWrapper>

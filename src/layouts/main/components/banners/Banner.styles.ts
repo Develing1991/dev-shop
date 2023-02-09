@@ -19,9 +19,6 @@ export const Banner = styled.section`
     margin: auto;
     position: absolute;
   }
-  .image-area img {
-    width: 100%;
-  }
 `;
 
 export const PrevArrow = styled(AiFillLeftCircle)`

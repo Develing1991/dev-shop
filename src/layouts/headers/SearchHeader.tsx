@@ -1,6 +1,6 @@
-import LogoWrapper from "./units/components/LogoWrapper";
-import NavWrapper from "./units/components/NavWrapper";
-import UtilWrapper from "./units/components/UtilWrapper";
+import LogoWrapper from "./components/LogoWrapper/LogoWrapper";
+import NavWrapper from "./components/NavWrapper/NavWrapper";
+import UtilWrapper from "./components/UtilWrapper/UtilWrapper";
 
 export default function SearchHeader() {
   return (

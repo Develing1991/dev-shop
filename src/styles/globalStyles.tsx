@@ -72,6 +72,7 @@ export default css`
 
 	img {
 		vertical-align: top;
+    width: 100%;
 	}
 
 	button {

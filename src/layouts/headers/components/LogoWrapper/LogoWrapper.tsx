@@ -1,4 +1,4 @@
-import * as S from "../styles/LogoWrapper.styles";
+import * as S from "./LogoWrapper.styles";
 import { BiSearch } from "react-icons/bi";
 export default function LogoWrapper() {
   return (
