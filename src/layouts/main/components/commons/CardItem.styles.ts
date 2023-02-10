@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
-import { AiOutlineHeart } from "react-icons/ai";
+import { IoIosHeartEmpty } from "react-icons/io";
 
 export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: flex-start;
   gap: 5px;
   align-items: ${({ center }: { center: boolean }) =>
     center ? "center" : "flex-start"};
   .image-area {
-    max-width: 320px;
+    /* max-width: 320px; */
     margin-bottom: 10px;
   }
   .image-area:hover {
@@ -49,7 +50,7 @@ export const CardItem = styled.div`
     .heart {
       position: absolute;
       right: 0;
-      color: var(--color-gray-0);
+      color: var(--color-gray-1);
     }
   }
   .shipping {
@@ -61,7 +62,7 @@ export const CardItem = styled.div`
   }
 `;
 
-export const HeartIcon = styled(AiOutlineHeart)`
+export const HeartIcon = styled(IoIosHeartEmpty)`
   width: 25px;
   height: 25px;
   margin: 0 5px 5px 0;

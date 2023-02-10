@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Contacts = styled.div`
-  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   gap: 30px;

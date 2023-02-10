@@ -8,7 +8,7 @@ export const Coperation = styled.div`
     line-height: 1.5;
     gap: 10px;
   }
-  @media screen and (max-width: 490px) {
+  @media screen and (max-width: 480px) {
     margin-top: 10px;
     grid-template-columns: repeat(1, 1fr);
   }
@@ -22,13 +22,14 @@ export const Coperation = styled.div`
     }
   }
   span {
-    color: var(--color-gray-1);
+    color: var(--color-gray-3);
     margin-right: 5px;
   }
   .copyright {
-    color: var(--color-gray-1);
+    color: var(--color-gray-3);
     grid-column: 1/4;
-    @media screen and (max-width: 490px) {
+    line-height: 1.7;
+    @media screen and (max-width: 480px) {
       grid-column: 1;
     }
   }
