@@ -26,16 +26,16 @@ export default function Contacts() {
         <dt>Community</dt>
         <ul className="menu">
           <li>
-            <a href="">마이페이지</a>
+            <a href="#">마이페이지</a>
           </li>
           <li>
-            <a href="">장바구니</a>
+            <a href="#">장바구니</a>
           </li>
           <li>
-            <a href="">위시리스트</a>
+            <a href="#">위시리스트</a>
           </li>
           <li>
-            <a href="">주문조회</a>
+            <a href="#">주문조회</a>
           </li>
         </ul>
       </dl>

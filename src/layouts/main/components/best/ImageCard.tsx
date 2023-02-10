@@ -4,7 +4,7 @@ export default function ImageCard() {
     <S.ImageCard>
       <ul>
         <li>
-          <a href="">
+          <a href="#">
             <img
               src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb_1.jpg"
               alt="thumb1"
@@ -12,7 +12,7 @@ export default function ImageCard() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <img
               src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb_2.jpg"
               alt="thumb2"
@@ -20,7 +20,7 @@ export default function ImageCard() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <img
               src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb_3.jpg"
               alt="thumb3"
@@ -28,7 +28,7 @@ export default function ImageCard() {
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#">
             <img
               src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb_1.jpg"
               alt="thumb1"

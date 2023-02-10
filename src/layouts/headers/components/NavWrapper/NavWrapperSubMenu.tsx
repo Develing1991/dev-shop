@@ -16,7 +16,7 @@ export default function NavWrapperSubMenu(props: INavWrapperSubMenu) {
 
   return (
     <li onMouseOver={onMouseOverMenu} onMouseOut={onMouseOverMenu}>
-      <a href="">
+      <a href="#">
         <em>{name}</em>
       </a>
       <div className={`sub-menu ${subMenu && active ? "active" : ""}`}>
@@ -25,7 +25,7 @@ export default function NavWrapperSubMenu(props: INavWrapperSubMenu) {
             subMenu.length > 0 &&
             subMenu.map((el, index) => (
               <li key={index}>
-                <a href="">{el}</a>
+                <a href="#">{el}</a>
               </li>
             ))}
         </ul>
