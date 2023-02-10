@@ -40,13 +40,11 @@ export default function Coperation() {
           책임자 (email_id@maildomain.com)
         </dd>
       </dl>
-      <dl>
+      <div className="copyright">
         <dd>
           <span>호스팅 제공자:</span>
           (주)가비아씨엔에스
         </dd>
-      </dl>
-      <div className="copyright">
         COPYRIGHT (c) <span className="coperation">(주)회사명</span> ALL RIGHTS
         RESERVED.
       </div>

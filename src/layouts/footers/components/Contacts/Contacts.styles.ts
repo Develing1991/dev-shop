@@ -4,10 +4,9 @@ export const Contacts = styled.div`
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
-
   gap: 30px;
+
   @media screen and (max-width: 640px) {
-    /* flex-direction: column; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-bottom: 1px dotted var(--color-gray-1);
