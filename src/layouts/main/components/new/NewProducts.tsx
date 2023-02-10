@@ -35,16 +35,17 @@ export default function NewProducts() {
             shipping="무료배송"
           />
         </li>
-      </ul>
-
-      <div className="right-product">
-        <div className="image-area">
-          <img
-            src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb3_1.jpg"
-            alt="뽀득뽀득! 라라베베와 함께 신나는 목욕시간"
+        <li>
+          <CardItem
+            image="http://responsive-sample42.firstmall.kr/data/goods/1/2021/12/31_temp_16383453480875view.jpg"
+            title="편리한 검색 모듈 제공"
+            price="68,000"
+            discount="90,000"
+            rate="25"
+            shipping="무료배송"
           />
-        </div>
-      </div>
+        </li>
+      </ul>
     </S.NewProducts>
   );
 }
