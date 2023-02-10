@@ -26,7 +26,8 @@ export default css`
 
     /* color */
     --color-white:#fff;
-    --color-black:#000;
+    /* --color-black:#000; */
+    --color-black:#020202;
     --color-blue:#007cd2;
     --color-pink:#ff93a0;
     --color-gray-0:#ddd;
