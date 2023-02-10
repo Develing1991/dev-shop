@@ -13,6 +13,6 @@ export default function LayoutIndex({ children }: { children: JSX.Element }) {
 const SLayoutIndex = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  width: 100vw;
 `;
