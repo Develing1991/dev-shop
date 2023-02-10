@@ -75,6 +75,29 @@ export const IconBox = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
   }
+
+  .shop-icon {
+    position: relative;
+  }
+
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    border: 2px solid var(--color-pink);
+    width: 70%;
+    height: 70%;
+    /* width: 15px;
+    height: 15px; */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: var(--font-bold);
+    background-color: var(--color-pink);
+    color: var(--color-white);
+  }
   .menu-icon {
     margin-left: 20px;
     @media screen and (max-width: 480px) {

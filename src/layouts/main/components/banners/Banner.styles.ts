@@ -82,8 +82,8 @@ export const Slider = styled(SlickSlider)`
   }
   @media screen and (max-width: 480px) {
     .slick-list {
-      width: 150%;
-      margin-left: -22%;
+      width: 170%;
+      margin-left: -34%;
     }
   }
 `;

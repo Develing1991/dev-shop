@@ -32,7 +32,10 @@ export default function LogoWrapper() {
         </div>
         <S.IconBox>
           <S.RSearchIcon onClick={aaa} />
-          <S.RShopIcon />
+          <div className="shop-icon">
+            <S.RShopIcon />
+            <div className="badge">N</div>
+          </div>
           <S.RMenuIcon className="menu-icon" />
         </S.IconBox>
       </div>
