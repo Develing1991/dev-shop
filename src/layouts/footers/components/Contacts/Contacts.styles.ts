@@ -1,27 +1,39 @@
 import styled from "@emotion/styled";
 
 export const Contacts = styled.div`
-  display: flex;
   margin-top: 40px;
+  display: flex;
   justify-content: space-between;
+
+  gap: 30px;
   @media screen and (max-width: 640px) {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px dotted var(--color-gray-1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
   }
-  dl {
-    @media screen and (max-width: 640px) {
-      border-bottom: 1px dotted var(--color-gray-1);
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
   .call-area {
-    flex-basis: 50%;
+    @media screen and (max-width: 640px) {
+      grid-column: 1 / 3;
+    }
+    @media screen and (max-width: 480px) {
+      grid-column: 1;
+    }
   }
   dt {
     font-weight: var(--font-bold);
     font-size: var(--text-sm);
     color: var(--color-black);
     margin-bottom: 20px;
+    @media screen and (max-width: 480px) {
+      margin-bottom: 10px;
+    }
   }
   dd {
     font-size: var(--text-xs);
