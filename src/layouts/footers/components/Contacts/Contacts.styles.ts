@@ -4,6 +4,16 @@ export const Contacts = styled.div`
   display: flex;
   margin-top: 40px;
   justify-content: space-between;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+  dl {
+    @media screen and (max-width: 640px) {
+      border-bottom: 1px dotted var(--color-gray-1);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+  }
   .call-area {
     flex-basis: 50%;
   }
