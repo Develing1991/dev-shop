@@ -8,6 +8,8 @@ export default function Banner() {
     // autoplaySpeed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: <S.PrevArrow className="prev-arrow" />,
+    nextArrow: <S.NextArrow className="next-arrow" />,
     responsive: [
       {
         breakpoint: 640,

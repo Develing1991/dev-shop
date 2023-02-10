@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const Banner = styled.section`
   .inner {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: auto;
     position: relative;
   }
@@ -62,34 +62,36 @@ export const Slider = styled(SlickSlider)`
     color: var(--color-pink);
   }
 
-  @media screen and (max-width: 1024px) {
-    .slick-list {
-      width: 110%;
-      margin-left: -5%;
-      margin-right: -5%;
+  /* .image-area img {
+    @media screen and (max-width: 1024px) {
+      .slick-list {
+        width: 120%;
+        margin-left: -30%;
+        margin-right: -30%;
+      }
     }
-  }
-  @media screen and (max-width: 768px) {
-    .slick-list {
-      width: 130%;
-      margin-left: -15%;
-      margin-right: -15%;
+    @media screen and (max-width: 768px) {
+      .slick-list {
+        width: 130%;
+        margin-left: -20%;
+        margin-right: -20%;
+      }
     }
-  }
-  @media screen and (max-width: 640px) {
-    .slick-list {
-      width: 140%;
-      margin-left: -18%;
-      margin-right: -18%;
+    @media screen and (max-width: 640px) {
+      .slick-list {
+        width: 140%;
+        margin-left: -18%;
+        margin-right: -18%;
+      }
     }
-  }
-  @media screen and (max-width: 480px) {
-    .slick-list {
-      width: 170%;
-      margin-left: -34%;
-      margin-right: -34%;
+    @media screen and (max-width: 480px) {
+      .slick-list {
+        width: 170%;
+        margin-left: -34%;
+        margin-right: -34%;
+      }
     }
-  }
+  } */
 `;
 
 export const PrevArrow = styled(AiFillLeftCircle)`
@@ -106,6 +108,11 @@ export const PrevArrow = styled(AiFillLeftCircle)`
   pointer-events: none;
   opacity: 0;
   transition: all 0.2s ease-in;
+  @media screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+    left: 20px;
+  }
   @media screen and (max-width: 640px) {
     display: none;
   }
@@ -125,7 +132,12 @@ export const NextArrow = styled(AiFillRightCircle)`
   pointer-events: none;
   opacity: 0;
   transition: all 0.2s ease-in;
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+    right: 20px;
+  }
+  @media screen and (max-width: 669px) {
     display: none;
   }
 `;
