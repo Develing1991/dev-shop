@@ -66,24 +66,28 @@ export const Slider = styled(SlickSlider)`
     .slick-list {
       width: 110%;
       margin-left: -5%;
+      margin-right: -5%;
     }
   }
   @media screen and (max-width: 768px) {
     .slick-list {
       width: 130%;
       margin-left: -15%;
+      margin-right: -15%;
     }
   }
   @media screen and (max-width: 640px) {
     .slick-list {
       width: 140%;
       margin-left: -18%;
+      margin-right: -18%;
     }
   }
   @media screen and (max-width: 480px) {
     .slick-list {
       width: 170%;
       margin-left: -34%;
+      margin-right: -34%;
     }
   }
 `;
