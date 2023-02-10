@@ -45,6 +45,9 @@ export const Slider = styled(SlickSlider)`
     opacity: 1;
     color: var(--color-pink);
   }
+  button.slick-arrow.slick-next {
+    display: none !important; //인라인 스타일이라 강제
+  }
   .image-area img {
     display: block;
     height: 500px;
