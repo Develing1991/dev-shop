@@ -27,6 +27,14 @@ export default function ImageCard() {
             />
           </a>
         </li>
+        <li>
+          <a href="">
+            <img
+              src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/thumb_1.jpg"
+              alt="thumb1"
+            />
+          </a>
+        </li>
       </ul>
     </S.ImageCard>
   );
