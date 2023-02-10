@@ -1,15 +1,15 @@
 import * as S from "./Banner.styles";
+
 export default function Banner() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 800,
-    // autoplay: true,
-    // autoplaySpeed: 4000,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: <S.PrevArrow className="prev-arrow" />,
-    nextArrow: <S.NextArrow className="next-arrow" />,
+    arrow: false,
     responsive: [
       {
         breakpoint: 640,
@@ -23,10 +23,6 @@ export default function Banner() {
   return (
     <S.Banner>
       <div className="inner">
-        <div className="btn-wrapper">
-          <S.PrevArrow className="prev-arrow" />
-          <S.NextArrow className="next-arrow" />
-        </div>
         <div>
           <S.Slider {...settings}>
             <div className="image-area">
