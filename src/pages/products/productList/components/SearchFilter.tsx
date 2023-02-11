@@ -11,10 +11,9 @@ export default function SearchFilter({ onClickColChange }: ISearchFilter) {
           <S.ArrowDescToggle />
         </li>
         <li>랭킹순</li>
-        <li>신규등록순</li>
-        <li>낮은가격순</li>
-        <li>높은가격순</li>
-        <li>상품평많은순</li>
+        <li>등록순</li>
+        <li>가격순</li>
+        <li>상품평순</li>
         <li>판매량순</li>
       </ul>
       <ul className="filter-right">
@@ -29,10 +28,9 @@ export default function SearchFilter({ onClickColChange }: ISearchFilter) {
         <li className="page per-rate">
           <select name="" id="">
             <option value="">랭킹순</option>
-            <option value="">신규등록순</option>
-            <option value="">낮은가격순</option>
-            <option value="">높은가격순</option>
-            <option value="">상품평많은순</option>
+            <option value="">등록순</option>
+            <option value="">가격순</option>
+            <option value="">상품평순</option>
             <option value="">판매량순</option>
           </select>
         </li>
