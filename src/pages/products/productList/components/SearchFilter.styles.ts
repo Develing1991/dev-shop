@@ -12,14 +12,17 @@ export const SearchFilter = styled.div`
 
   .filter-left {
     display: flex;
-    align-self: center;
   }
   .filter-left li {
     padding: 12px 17px;
     border-right: 1px solid var(--color-gray-0);
+    height: 100%;
     cursor: pointer;
     @media screen and (max-width: 480px) {
-      padding: 7px 10px;
+      padding: 4px 5px;
+    }
+    @media screen and (max-width: 360px) {
+      border: none;
     }
   }
   .filter-left li:first-of-type {
@@ -39,7 +42,6 @@ export const SearchFilter = styled.div`
   }
   .filter-right {
     display: flex;
-    align-items: center;
   }
   .filter-right li {
     padding: 10px;
@@ -70,11 +72,14 @@ export const SearchFilter = styled.div`
   .filter-right li.page select {
     outline: none;
     height: 100%;
-    padding: 0 0 0 10px;
+    padding-left: 10px;
     border: none;
     font-size: var(--text-sm);
     color: var(--color-gray-3);
     cursor: pointer;
+    @media screen and (max-width: 480px) {
+      padding: 5px;
+    }
   }
 `;
 
@@ -91,6 +96,7 @@ function CommStyled(Icon: IconType) {
     width: 100%;
     height: 100%;
     cursor: pointer;
+
     @media screen and (max-width: 480px) {
       width: 15px;
       height: 15px;
