@@ -4,16 +4,20 @@ import { FcGoogle } from "react-icons/fc";
 import { IconType } from "react-icons/lib";
 
 export const SignInPage = styled.div`
-  width: 400px;
-  max-width: 400px;
+  width: 450px;
+  max-width: 450px;
   margin: auto;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  border: 1px solid var(--color-gray-0);
+  border-radius: 4px;
+  padding: 60px 40px;
   @media screen and (max-width: 480px) {
     width: 100%;
     padding: 15px;
+    border: none;
   }
 
   .title {
@@ -103,8 +107,12 @@ export const SignInPage = styled.div`
 
   .others {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
     margin-top: 40px;
+    @media screen and (max-width: 480px) {
+      gap: 30px;
+    }
   }
 `;
 
@@ -121,5 +129,6 @@ function CommStyled(Icon: IconType) {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    flex-shrink: 0;
   `;
 }
