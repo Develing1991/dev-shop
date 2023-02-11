@@ -4,4 +4,7 @@ export const ProductListPage = styled.section`
   max-width: 1024px;
   margin: auto;
   padding: 20px;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
