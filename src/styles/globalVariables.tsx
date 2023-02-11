@@ -10,6 +10,7 @@ export default css`
     --font-black:900;
     
     /* font-size */
+    --text-2xs: 0.50rem; /* 10px */
     --text-xs: 0.75rem; /* 12px */
     --text-sm:0.875rem; /* 14px */
     --text-base:1rem; /* 16px */

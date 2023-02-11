@@ -21,6 +21,7 @@ export const ProductListPage = styled.section`
       1fr
     );
     gap: 15px;
+
     @media screen and (max-width: 860px) {
       grid-template-columns: repeat(
         ${({ grid }: { grid: string }) => (grid === "grid-box" ? 3 : 1)},
@@ -32,6 +33,9 @@ export const ProductListPage = styled.section`
         ${({ grid }: { grid: string }) => (grid === "grid-box" ? 2 : 1)},
         1fr
       );
+    }
+    @media screen and (max-width: 460px) {
+      gap: 10px;
     }
   }
 `;

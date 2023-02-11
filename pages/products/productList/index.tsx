@@ -17,7 +17,7 @@ export default function ProductListPage() {
         {Array(10)
           .fill(1)
           .map((el, index) => {
-            return <ProductItem key={index} />;
+            return <ProductItem key={index} grid={grid} />;
           })}
       </div>
     </S.ProductListPage>
