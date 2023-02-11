@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { IconType } from "react-icons";
 import { MdOutlineKeyboardArrowRight, MdOutlineHome } from "react-icons/md";
 export const SearchNav = styled.nav`
+  margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 5px;
