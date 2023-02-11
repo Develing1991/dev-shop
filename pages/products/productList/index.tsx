@@ -12,14 +12,14 @@ export default function ProductListPage() {
     <S.ProductListPage col={col}>
       <SearchNav />
       <SearchFilter onClickColChange={onClickColChange} />
-
+      {/* 
       <div className="products">
         {Array(10)
           .fill(1)
           .map((el, index) => {
             return <ProductItem key={index} />;
           })}
-      </div>
+      </div> */}
     </S.ProductListPage>
   );
 }
