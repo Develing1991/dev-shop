@@ -1,6 +1,6 @@
 import * as S from "./SearchFilter.styles";
 interface ISearchFilter {
-  onClickColChange: (col: number) => void;
+  onClickColChange: (grid: string) => void;
 }
 export default function SearchFilter({ onClickColChange }: ISearchFilter) {
   return (
@@ -38,14 +38,14 @@ export default function SearchFilter({ onClickColChange }: ISearchFilter) {
         </li>
         <li
           onClick={() => {
-            onClickColChange(4);
+            onClickColChange("grid-box");
           }}
         >
           <S.ListSquareIcon />
         </li>
         <li
           onClick={() => {
-            onClickColChange(2);
+            onClickColChange("grid-list");
           }}
         >
           <S.ListBulletIcon />

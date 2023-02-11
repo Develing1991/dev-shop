@@ -16,7 +16,22 @@ export const ProductListPage = styled.section`
   .products {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(${({ col }: { col: number }) => col}, 1fr);
+    grid-template-columns: repeat(
+      ${({ grid }: { grid: string }) => (grid === "grid-box" ? 4 : 2)},
+      1fr
+    );
     gap: 15px;
+    @media screen and (max-width: 860px) {
+      grid-template-columns: repeat(
+        ${({ grid }: { grid: string }) => (grid === "grid-box" ? 3 : 1)},
+        1fr
+      );
+    }
+    @media screen and (max-width: 650px) {
+      grid-template-columns: repeat(
+        ${({ grid }: { grid: string }) => (grid === "grid-box" ? 2 : 1)},
+        1fr
+      );
+    }
   }
 `;

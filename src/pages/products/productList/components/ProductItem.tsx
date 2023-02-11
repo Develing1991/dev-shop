@@ -15,7 +15,7 @@ export default function ProductItem() {
         <span className="brand">SK-II</span> 세련된 혼합형 배너 제공
       </h4>
       <div className="description">
-        퍼스트몰 반응형 스킨에서는 이미지/콘텐츠가 혼합된 세련된 슬라이드배너를
+        퍼스트몰 반응형 스킨에서는 이미지/콘텐츠가 혼합된 세련된 슬라이드 배너를
         제공합니다
       </div>
       <div className="info">

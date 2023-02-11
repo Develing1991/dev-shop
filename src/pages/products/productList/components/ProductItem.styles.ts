@@ -25,6 +25,12 @@ export const ProductItem = styled.div`
       content: "]";
       padding-left: 1px;
     }
+    /* elipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .title:hover {
     text-decoration: underline;
@@ -34,12 +40,19 @@ export const ProductItem = styled.div`
     margin-top: 5px;
     font-size: var(--text-sm);
     color: var(--color-gray-2);
+    /* elipsis */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .info {
     display: flex;
     align-items: flex-end;
     gap: 10px;
+    flex-wrap: wrap;
     margin-top: 10px;
     .price {
       color: var(--color-black);
@@ -75,6 +88,7 @@ export const ProductItem = styled.div`
     display: flex;
     gap: 5px;
     margin-top: 10px;
+    flex-wrap: wrap;
     span {
       font-size: var(--text-xs);
       border: 1px solid var(--color-gray-1);

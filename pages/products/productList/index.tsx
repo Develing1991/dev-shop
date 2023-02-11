@@ -4,12 +4,12 @@ import SearchNav from "@/src/pages/products/productList/components/SearchNav";
 import * as S from "@/src/pages/products/productList/ProductListPage.styles";
 import { useState } from "react";
 export default function ProductListPage() {
-  const [col, setCol] = useState(4);
-  const onClickColChange = (col: number) => {
-    setCol(() => col);
+  const [grid, setGrid] = useState("grid-box"); // grid-box:4, grid-list:2
+  const onClickColChange = (grid: string) => {
+    setGrid(() => grid);
   };
   return (
-    <S.ProductListPage col={col}>
+    <S.ProductListPage grid={grid}>
       <SearchNav />
       <SearchFilter onClickColChange={onClickColChange} />
 
