@@ -37,7 +37,7 @@ export const CardItem = styled.div`
     }
     .rate {
       font-weight: var(--font-bold);
-      color: var(--color-blue);
+      color: var(--color-blue-0);
     }
   }
   .card-actions {

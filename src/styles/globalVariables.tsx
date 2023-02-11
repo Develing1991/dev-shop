@@ -28,9 +28,12 @@ export default css`
     --color-white:#fff;
     /* --color-black:#000; */
     --color-black:#020202;
-    --color-blue:#007cd2;
+    --color-blue-0:#007cd2;
+    --color-blue-1:#697ba4;
     --color-pink:#ff93a0;
+    --color-red:#e21818;
     --color-orange:#ec5903;
+    --color-beige-0: #fff49d;
     --color-gray-0:#ddd;
     --color-gray-1:#999;
     --color-gray-2:#767676;

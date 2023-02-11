@@ -1,6 +1,8 @@
-import React from "react";
 import * as S from "./SearchFilter.styles";
-export default function SearchFilter() {
+interface ISearchFilter {
+  onClickColChange: (col: number) => void;
+}
+export default function SearchFilter({ onClickColChange }: ISearchFilter) {
   return (
     <S.SearchFilter>
       <ul className="filter-left">
@@ -21,10 +23,18 @@ export default function SearchFilter() {
             <option value="">200개씩 보기</option>
           </select>
         </li>
-        <li>
+        <li
+          onClick={() => {
+            onClickColChange(4);
+          }}
+        >
           <S.ListSquareIcon />
         </li>
-        <li>
+        <li
+          onClick={() => {
+            onClickColChange(2);
+          }}
+        >
           <S.ListBulletIcon />
         </li>
       </ul>
