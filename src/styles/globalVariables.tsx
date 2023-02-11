@@ -30,6 +30,7 @@ export default css`
     --color-black:#020202;
     --color-blue:#007cd2;
     --color-pink:#ff93a0;
+    --color-orange:#ec5903;
     --color-gray-0:#ddd;
     --color-gray-1:#999;
     --color-gray-2:#767676;
