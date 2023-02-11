@@ -15,6 +15,14 @@ export const SearchNav = styled.nav`
   select:hover {
     border-color: var(--color-gray-1);
   }
+  .icons {
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    gap: 5px;
+  }
 `;
 
 export const HomeIcon = styled(CommStyled(MdOutlineHome))``;

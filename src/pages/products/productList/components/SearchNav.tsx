@@ -3,8 +3,8 @@ import * as S from "./SearchNav.styles";
 export default function SearchNav() {
   return (
     <S.SearchNav>
-      <S.HomeIcon />
-      <S.ArrowRightIcon />
+      <S.HomeIcon className="icons" />
+      <S.ArrowRightIcon className="icons" />
       <select name="" id="">
         <option value="">침구/가구</option>
         <option value="">외출</option>
@@ -14,7 +14,7 @@ export default function SearchNav() {
         <option value="">놀이용품</option>
         <option value="">장난감</option>
       </select>
-      <S.ArrowRightIcon />
+      <S.ArrowRightIcon className="icons" />
       <select name="" id="">
         <option value="">탑</option>
         <option value="">아우터</option>
