@@ -1,3 +1,4 @@
+import ActionButton from "@/src/pages/products/productDetail/components/ActionButton";
 import DropDownMenu from "@/src/pages/products/productDetail/components/DropDownMenu";
 import SelectedOption from "@/src/pages/products/productDetail/components/SelectedOption";
 import * as S from "@/src/pages/products/productDetail/ProductDetailPage.styles";
@@ -86,7 +87,6 @@ export default function ProductDetailPage() {
                 selectedValue={selectOption}
               />
             </div>
-            {/* SelectedProduct */}
             <div className="select-prod">
               <SelectedOption />
             </div>
@@ -95,8 +95,8 @@ export default function ProductDetailPage() {
             </div>
             <div className="btn-group">
               {/* ActionButton */}
-              <button>장바구니</button>
-              <button>구매하기</button>
+              <ActionButton text="장바구니" />
+              <ActionButton text="구매하기" />
             </div>
           </li>
         </ul>
