@@ -4,20 +4,20 @@ export const ProductDetailPage = styled.section`
   width: 100%;
   padding: 0 20px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 70px;
 
   .product-detail {
-    display: flex;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 47.5%);
+    gap: 5%;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 100%);
+      gap: 20px;
+    }
   }
-  .detail__left,
-  .detail__right {
-    width: 50%;
-    flex-basis: 50%;
-  }
-  /* left */
-  .image-area {
-    object-fit: cover;
+
+  .detail__right li {
+    width: 100%;
   }
   /* right */
   .info {
