@@ -98,12 +98,14 @@ export const ProductDetailPage = styled.section`
     align-items: baseline;
     justify-content: flex-end;
     font-family: "Roboto";
-  }
-  .ammount {
-    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
   }
+  .ammount {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-regular);
+  }
   .btn-group {
+    margin-top: 30px;
     display: flex;
     gap: 10px;
   }

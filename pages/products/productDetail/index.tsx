@@ -87,7 +87,7 @@ export default function ProductDetailPage() {
                 selectedValue={selectOption}
               />
             </div>
-            <div className="select-prod">
+            <div className="selected-product">
               <SelectedOption />
             </div>
             <div className="total">
@@ -96,7 +96,7 @@ export default function ProductDetailPage() {
             <div className="btn-group">
               {/* ActionButton */}
               <ActionButton text="장바구니" />
-              <ActionButton text="구매하기" />
+              <ActionButton text="구매하기" reverse />
             </div>
           </li>
         </ul>
