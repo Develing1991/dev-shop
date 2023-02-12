@@ -1,6 +1,7 @@
 import ActionButton from "@/src/pages/products/productDetail/components/ActionButton";
 import DropDownMenu from "@/src/pages/products/productDetail/components/DropDownMenu";
 import SelectedOption from "@/src/pages/products/productDetail/components/SelectedOption";
+import SliderImage from "@/src/pages/products/productDetail/components/SliderImage";
 import * as S from "@/src/pages/products/productDetail/ProductDetailPage.styles";
 import { useState } from "react";
 export default function ProductDetailPage() {
@@ -12,13 +13,7 @@ export default function ProductDetailPage() {
     <S.ProductDetailPage>
       <div className="product-detail">
         <div className="detail__left">
-          <div className="image-area">
-            <img
-              src="http://responsive-sample42.firstmall.kr/data/goods/1/2021/12/31_temp_16383453480875view.jpg"
-              alt="이미지"
-            />
-          </div>
-          <div className="swiper">swiper</div>
+          <SliderImage />
         </div>
         <ul className="detail__right">
           <li className="info">

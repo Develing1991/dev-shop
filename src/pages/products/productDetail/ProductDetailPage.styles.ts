@@ -12,6 +12,7 @@ export const ProductDetailPage = styled.section`
   }
   .detail__left,
   .detail__right {
+    width: 50%;
     flex-basis: 50%;
   }
   /* left */
