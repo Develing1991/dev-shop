@@ -1,4 +1,5 @@
 import DropDownMenu from "@/src/pages/products/productDetail/components/DropDownMenu";
+import SelectedOption from "@/src/pages/products/productDetail/components/SelectedOption";
 import * as S from "@/src/pages/products/productDetail/ProductDetailPage.styles";
 import { useState } from "react";
 export default function ProductDetailPage() {
@@ -87,14 +88,7 @@ export default function ProductDetailPage() {
             </div>
             {/* SelectedProduct */}
             <div className="select-prod">
-              <div>색상: 그레이</div>
-              <div>
-                <span>-</span>
-                <span>1</span>
-                <span>+</span>
-              </div>
-              <div>68,000원</div>
-              <div>X</div>
+              <SelectedOption />
             </div>
             <div className="total">
               총 상품 금액 <span className="ammount">68,000</span>
