@@ -6,6 +6,9 @@ export const ProductDetailPage = styled.section`
   margin: auto;
   margin-top: 70px;
 
+  @media screen and (max-width: 460px) {
+    margin-top: 30px;
+  }
   .product-detail {
     display: grid;
     grid-template-columns: repeat(2, 47.5%);
@@ -52,7 +55,6 @@ export const ProductDetailPage = styled.section`
     display: flex;
     align-items: center;
     margin: 20px 0;
-    /* margin-bottom: 20px; */
   }
   .table .th {
     flex: 1;

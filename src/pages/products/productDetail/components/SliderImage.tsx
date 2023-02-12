@@ -36,7 +36,7 @@ export default function SliderImage() {
         <Swiper
           onSwiper={setThumbsSwiper}
           spaceBetween={10}
-          slidesPerView={3.5}
+          slidesPerView={3.3}
           freeMode={true}
           watchSlidesProgress={true}
           navigation={{
