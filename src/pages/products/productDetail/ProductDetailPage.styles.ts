@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 export const ProductDetailPage = styled.section`
   max-width: 1024px;
+  width: 100%;
+  padding: 0 20px;
   margin: auto;
   margin-top: 50px;
 
