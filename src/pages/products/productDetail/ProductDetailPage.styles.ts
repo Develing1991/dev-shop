@@ -8,7 +8,7 @@ export const ProductDetailPage = styled.section`
 
   .product-detail {
     display: flex;
-    gap: 20px;
+    gap: 40px;
   }
   .detail__left,
   .detail__right {
@@ -32,7 +32,8 @@ export const ProductDetailPage = styled.section`
     text-decoration: line-through;
   }
   .info__price .discount {
-    font-size: var(--text-2xl);
+    margin-top: 10px;
+    font-size: var(--text-3xl);
     color: var(--color-gray-5);
   }
   .info__rate .rate {
@@ -83,14 +84,24 @@ export const ProductDetailPage = styled.section`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+  }
+
+  .selected-product {
+    font-family: "Roboto";
   }
 
   .total {
-    font-size: var(--text-2xl);
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    justify-content: flex-end;
+    font-family: "Roboto";
   }
   .ammount {
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
   }
   .btn-group {
     display: flex;

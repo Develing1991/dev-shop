@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 export const SelectedOption = styled.div`
   border: 1px solid var(--color-gray-5);
-
   padding: 15px;
 
   .value {
