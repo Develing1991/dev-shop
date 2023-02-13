@@ -1,10 +1,8 @@
-import Button from "@/src/components/buttons/Button";
 import * as S from "@/src/pages/members/orders/cartList/CartListPage.styles";
 
 export default function CartListPage() {
   return (
     <S.CartListPage>
-      {/* <h2 className="title">장바구니</h2> */}
       <div className="cart-board">
         <div className="cart-left">
           <div className="all checkbox">
@@ -65,8 +63,8 @@ export default function CartListPage() {
                       </div>
                     </li>
                     <li className="actions">
-                      <Button>옵션/수량변경</Button>
-                      <Button reverse>옵션/수량변경</Button>
+                      <S.OptionButton>옵션/수량변경</S.OptionButton>
+                      <S.OptionButton reverse>옵션/수량변경</S.OptionButton>
                     </li>
                   </ul>
                 </li>

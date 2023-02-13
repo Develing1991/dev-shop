@@ -7,10 +7,18 @@ export const CartListPage = styled.section`
   width: 100%;
   margin: auto;
   margin-top: 60px;
+  padding: 0 20px;
+  @media screen and (max-width: 480px) {
+    padding: 0 10px;
+  }
   .cart-board {
     display: grid;
-    grid-template-columns: 70% 30%;
-    gap: 30px;
+    grid-template-columns: 68.5% 30%;
+    gap: 1.5%;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 50px;
+    }
   }
   .cart-left {
     display: flex;
@@ -57,6 +65,13 @@ export const CartListPage = styled.section`
     align-items: center;
   }
 
+  .shipping-actions {
+    display: flex;
+    gap: 5px;
+    @media screen and (max-width: 380px) {
+      flex-direction: column;
+    }
+  }
   .shipping-actions button {
     border: 1px solid var(--color-gray-2);
     border-radius: 2px;
@@ -64,7 +79,6 @@ export const CartListPage = styled.section`
     color: var(--color-gray-3);
     font-size: var(--text-xs);
     font-weight: var(--font-bold);
-    margin-left: 5px;
   }
 
   .shipping-actions button:hover {
@@ -85,6 +99,9 @@ export const CartListPage = styled.section`
     gap: 10px;
     padding: 10px;
     font-size: var(--text-sm);
+    @media screen and (max-width: 320px) {
+      flex-direction: column;
+    }
   }
 
   .item__info .info__image {
@@ -100,6 +117,10 @@ export const CartListPage = styled.section`
     display: flex;
     justify-content: space-between;
     gap: 70px;
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   .info__details .options {
     display: flex;
@@ -110,7 +131,7 @@ export const CartListPage = styled.section`
   .info__details .price .tr {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
   }
   .info__details .options .th {
     border: 1px solid var(--color-gray-1);
@@ -143,12 +164,27 @@ export const CartListPage = styled.section`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media screen and (max-width: 1024px) {
+      flex-direction: row;
+    }
+    @media screen and (max-width: 380px) {
+      flex-direction: column;
+    }
   }
   .select-actions {
     align-self: flex-end;
     display: flex;
     gap: 10px;
     width: 50%;
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 380px) {
+      flex-direction: column;
+    }
   }
 
   /* right */
@@ -188,9 +224,24 @@ export const CartListPage = styled.section`
 `;
 
 export const CloseIcon = styled(CommStyled(TfiClose))``;
+
+export const OptionButton = styled(Button)`
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
+  @media screen and (max-width: 460px) {
+    padding: 5px;
+  }
+`;
 export const ActionButton = styled(Button)`
   padding: 12px 10px;
   font-size: var(--text-base);
+  @media screen and (max-width: 460px) {
+    font-size: var(--text-sm);
+  }
+  @media screen and (max-width: 360px) {
+    font-size: var(--text-xs);
+  }
 `;
 
 function CommStyled(Icon: IconType) {
