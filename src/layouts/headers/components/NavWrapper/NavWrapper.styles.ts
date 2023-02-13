@@ -9,6 +9,7 @@ export const NavWrapper = styled.nav`
     top: 0;
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
+    z-index: 9;
   }
 
   @media screen and (max-width: 640px) {
@@ -25,9 +26,9 @@ export const NavWrapper = styled.nav`
 
   .inner > .menu {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     @media screen and (max-width: 1024px) {
       gap: 20px;
       justify-content: space-around;
@@ -44,7 +45,8 @@ export const NavWrapper = styled.nav`
   }
 
   .inner > .menu > li {
-    height: 100%;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     padding: 8px;
     position: relative;
@@ -65,7 +67,7 @@ export const NavWrapper = styled.nav`
     cursor: default;
     display: none;
     position: absolute;
-    top: 42px;
+    top: 50px;
     left: 0;
     width: 430px;
     min-height: 270px;

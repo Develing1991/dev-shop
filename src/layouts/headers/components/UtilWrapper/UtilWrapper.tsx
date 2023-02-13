@@ -1,5 +1,6 @@
 import * as S from "./UtilWrapper.styles";
 import { forwardRef, ForwardedRef } from "react";
+import Link from "next/link";
 
 type TUtilRef = ForwardedRef<HTMLDivElement>;
 const UtilWrapper = (props: any, ref: TUtilRef) => {
@@ -19,16 +20,16 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
         </ul>
         <ul className="menu2">
           <li>
-            <a href="#">로그인</a>
+            <Link href="/members/signin">로그인</Link>
           </li>
           <li>
-            <a href="#">회원가입</a>
+            <Link href="/members/signup">회원가입</Link>
           </li>
           <li>
-            <a href="#">장바구니</a>
+            <Link href="/members/orders/cartlist">장바구니</Link>
           </li>
           <li>
-            <a href="#">주문조회</a>
+            <Link href="/members/orders/orderlist">주문조회</Link>
           </li>
           <li>
             <a href="#">마이페이지</a>

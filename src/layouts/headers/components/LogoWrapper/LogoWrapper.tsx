@@ -1,5 +1,6 @@
 import * as S from "./LogoWrapper.styles";
 import { useRef, forwardRef, ForwardedRef } from "react";
+import Link from "next/link";
 
 type TLogoRef = ForwardedRef<HTMLDivElement>;
 const LogoWrapper = (props: any, ref: TLogoRef) => {
@@ -11,12 +12,12 @@ const LogoWrapper = (props: any, ref: TLogoRef) => {
     <S.LogoWrapper ref={ref}>
       <div className="inner">
         <h1 className="logo">
-          <a href="/">
+          <Link href="/">
             <img
               src="http://responsive-sample42.firstmall.kr/data/skin/responsive_babygoods_cute_gl/images/design_resp/logo.png"
               alt="로고"
             />
-          </a>
+          </Link>
         </h1>
         <div className="search-form">
           <form>
