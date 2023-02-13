@@ -168,7 +168,7 @@ export const CartListPage = styled.section`
       flex-direction: row;
     }
     @media screen and (max-width: 380px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
   .select-actions {

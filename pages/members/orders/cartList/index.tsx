@@ -64,7 +64,7 @@ export default function CartListPage() {
                     </li>
                     <li className="actions">
                       <S.OptionButton>옵션/수량변경</S.OptionButton>
-                      <S.OptionButton reverse>옵션/수량변경</S.OptionButton>
+                      <S.OptionButton reverse>바로구매</S.OptionButton>
                     </li>
                   </ul>
                 </li>
