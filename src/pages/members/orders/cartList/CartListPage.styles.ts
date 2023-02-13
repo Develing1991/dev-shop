@@ -34,7 +34,15 @@ export const CartListPage = styled.section`
 
   .checkbox {
     display: flex;
+    align-items: center;
     gap: 10px;
+  }
+  .checkbox input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+  .checkbox label {
+    cursor: pointer;
   }
 
   .cart-list {
@@ -101,6 +109,7 @@ export const CartListPage = styled.section`
     font-size: var(--text-sm);
     @media screen and (max-width: 320px) {
       flex-direction: column;
+      gap: 20px;
     }
   }
 
