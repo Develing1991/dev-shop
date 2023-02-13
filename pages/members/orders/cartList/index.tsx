@@ -65,17 +65,19 @@ export default function CartListPage() {
                       </div>
                     </li>
                     <li className="actions">
-                      <Button text="옵션/수량변경" />
-                      <Button reverse text="바로구매" />
+                      <Button>옵션/수량변경</Button>
+                      <Button reverse>옵션/수량변경</Button>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
           </ul>
-          <div className="all_actions">
-            <Button text="선택상품 주문하기" reverse />
-            <Button text="선택상품 삭제" />
+          <div className="select_actions">
+            <S.SelectActionButton reverse>
+              선택상품 주문하기
+            </S.SelectActionButton>
+            <S.SelectActionButton>선택상품 삭제</S.SelectActionButton>
           </div>
         </div>
         <div className="cart-right">

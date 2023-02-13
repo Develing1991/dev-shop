@@ -1,8 +1,8 @@
 import * as S from "./Button.styles";
 interface IButton {
-  text: string;
+  children: string | JSX.Element;
   reverse?: boolean;
 }
-export default function Button({ text, reverse = false }: IButton) {
-  return <S.Button reverse={reverse}>{text}</S.Button>;
+export default function Button({ children, reverse = false }: IButton) {
+  return <S.Button reverse={reverse}>{children}</S.Button>;
 }

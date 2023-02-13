@@ -7,11 +7,11 @@ export const Button = styled.button`
   font-size: var(--text-xs);
   font-weight: var(--font-bold);
   letter-spacing: 0.01rem;
-  background-color: ${({ reverse }: { reverse: boolean }) =>
+  background-color: ${({ reverse }: { reverse?: boolean }) =>
     reverse ? "var(--color-gray-5)" : "var(--color-white)"};
   border: 1px solid
-    ${({ reverse }: { reverse: boolean }) =>
+    ${({ reverse }: { reverse?: boolean }) =>
       reverse ? "var(--color-gray-5)" : "var(--color-gray-1)"};
-  color: ${({ reverse }: { reverse: boolean }) =>
+  color: ${({ reverse }: { reverse?: boolean }) =>
     reverse ? "var(--color-white)" : "var(--color-gray-5)"};
 `;

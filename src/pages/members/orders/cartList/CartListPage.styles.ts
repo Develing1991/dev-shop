@@ -1,3 +1,4 @@
+import { Button } from "@/src/components/buttons/Button.styles";
 import styled from "@emotion/styled";
 import { IconType } from "react-icons/lib";
 import { TfiClose } from "react-icons/tfi";
@@ -143,7 +144,7 @@ export const CartListPage = styled.section`
     flex-direction: column;
     gap: 10px;
   }
-  .all_actions {
+  .select_actions {
     align-self: flex-end;
     display: flex;
     gap: 10px;
@@ -154,6 +155,10 @@ export const CartListPage = styled.section`
 `;
 
 export const CloseIcon = styled(CommStyled(TfiClose))``;
+export const SelectActionButton = styled(Button)`
+  padding: 12px 10px;
+  font-size: var(--text-base);
+`;
 
 function CommStyled(Icon: IconType) {
   return styled(Icon)`
