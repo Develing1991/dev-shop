@@ -7,7 +7,7 @@ export default function CartListPage() {
       {/* <h2 className="title">장바구니</h2> */}
       <div className="cart-board">
         <div className="cart-left">
-          <div className="all">
+          <div className="all checkbox">
             <input type="checkbox" name="" id="all" />
             <label htmlFor="all">전체선택</label>
           </div>
@@ -24,7 +24,7 @@ export default function CartListPage() {
             </li>
             <li className="list__item">
               <div className="item__head">
-                <div>
+                <div className="checkbox">
                   <input type="checkbox" name="" id="" />
                   <label htmlFor="">가장 높은 검색 우선순위</label>
                 </div>
@@ -73,17 +73,15 @@ export default function CartListPage() {
               </ul>
             </li>
           </ul>
-          <div className="select_actions">
-            <S.SelectActionButton reverse>
-              선택상품 주문하기
-            </S.SelectActionButton>
-            <S.SelectActionButton>선택상품 삭제</S.SelectActionButton>
+          <div className="select-actions">
+            <S.ActionButton reverse>선택상품 주문하기</S.ActionButton>
+            <S.ActionButton>선택상품 삭제</S.ActionButton>
           </div>
         </div>
         <div className="cart-right">
-          <h3>전체 주문시 금액</h3>
-          <ul>
-            <li className="total-price">
+          <h3 className="title">전체 주문시 금액</h3>
+          <ul className="total-menu">
+            <li>
               <span>총 상품금액</span>
               <span className="price">96,800</span>
             </li>
@@ -95,12 +93,12 @@ export default function CartListPage() {
               <span>총 할인</span>
               <span>0</span>
             </li>
-            <li className="total-amount">
+            <li className="amount-area">
               <span>총 결제금액</span>
               <span className="amount">96,800</span>
             </li>
           </ul>
-          <button>전체 주문하기</button>
+          <S.ActionButton reverse>전체 주문하기</S.ActionButton>
         </div>
       </div>
     </S.CartListPage>

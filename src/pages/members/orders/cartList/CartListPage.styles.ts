@@ -3,16 +3,10 @@ import styled from "@emotion/styled";
 import { IconType } from "react-icons/lib";
 import { TfiClose } from "react-icons/tfi";
 export const CartListPage = styled.section`
-  /* .title {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: var(--text-5xl);
-    font-weight: var(--font-bold);
-    letter-spacing: 0.1rem;
-  } */
   max-width: 1024px;
   width: 100%;
   margin: auto;
+  margin-top: 60px;
   .cart-board {
     display: grid;
     grid-template-columns: 70% 30%;
@@ -21,15 +15,21 @@ export const CartListPage = styled.section`
   .cart-left {
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
-  .all label {
+  .all label,
+  .cart-right .title {
     font-size: var(--text-xl);
     font-weight: var(--font-light);
   }
 
+  .checkbox {
+    display: flex;
+    gap: 10px;
+  }
+
   .cart-list {
-    margin: 15px 0;
     border: 1px solid var(--color-gray-2);
   }
 
@@ -144,18 +144,51 @@ export const CartListPage = styled.section`
     flex-direction: column;
     gap: 10px;
   }
-  .select_actions {
+  .select-actions {
     align-self: flex-end;
     display: flex;
     gap: 10px;
     width: 50%;
   }
+
+  /* right */
   .cart-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cart-right .title {
+    font-weight: var(--font-medium);
+  }
+
+  .cart-right .total-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--color-gray-2);
+    padding: 15px 10px;
+  }
+  .cart-right .total-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cart-right .total-menu .price {
+    font-size: var(--text-xl);
+  }
+  .cart-right .total-menu .amount-area {
+    border-top: 1px dashed var(--color-gray-1);
+    padding-top: 20px;
+  }
+  .cart-right .total-menu .amount-area .amount {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
   }
 `;
 
 export const CloseIcon = styled(CommStyled(TfiClose))``;
-export const SelectActionButton = styled(Button)`
+export const ActionButton = styled(Button)`
   padding: 12px 10px;
   font-size: var(--text-base);
 `;
