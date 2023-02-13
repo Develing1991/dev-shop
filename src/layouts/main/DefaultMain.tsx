@@ -11,7 +11,7 @@ import RecommendProducts from "./components/recommend/RecommendProducts";
 import SaleProducts from "./components/sale/SaleProducts";
 export default function DefaultMain() {
   return (
-    <main>
+    <div>
       {/* 슬라이드 배너 */}
       <Banner />
       {/* 베스트 */}
@@ -60,6 +60,6 @@ export default function DefaultMain() {
           <RecommendProducts />
         </>
       </Section>
-    </main>
+    </div>
   );
 }

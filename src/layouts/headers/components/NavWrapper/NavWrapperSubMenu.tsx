@@ -3,10 +3,11 @@ import { useState, SyntheticEvent } from "react";
 interface INavWrapperSubMenu {
   name: string;
   subMenu?: string[];
+  hiddenClass?: string;
 }
 export default function NavWrapperSubMenu(props: INavWrapperSubMenu) {
   const [active, setActive] = useState(false);
-  const { name, subMenu } = props;
+  const { name, subMenu, hiddenClass } = props;
 
   const onMouseOverMenu = (event: SyntheticEvent<HTMLLIElement>) => {
     if (window.innerWidth > 1024) {
@@ -15,7 +16,11 @@ export default function NavWrapperSubMenu(props: INavWrapperSubMenu) {
   };
 
   return (
-    <li onMouseOver={onMouseOverMenu} onMouseOut={onMouseOverMenu}>
+    <li
+      onMouseOver={onMouseOverMenu}
+      onMouseOut={onMouseOverMenu}
+      className={`${hiddenClass ?? ""}`}
+    >
       <a href="#">
         <em>{name}</em>
       </a>

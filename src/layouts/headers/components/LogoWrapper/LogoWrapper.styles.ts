@@ -5,6 +5,13 @@ import { FiSearch, FiShoppingCart } from "react-icons/fi";
 
 export const LogoWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
+  @media screen and (max-width: 640px) {
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+  }
+
   .inner {
     max-width: 1024px;
     padding: 0 20px;

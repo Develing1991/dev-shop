@@ -3,6 +3,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 export const NavWrapper = styled.nav`
   border-bottom: 1px solid #dbdbdb;
+
+  &.flying {
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+  }
+
   @media screen and (max-width: 640px) {
     display: none;
   }
@@ -22,8 +30,10 @@ export const NavWrapper = styled.nav`
     align-items: center;
     @media screen and (max-width: 1024px) {
       gap: 20px;
-      overflow-x: auto;
-      justify-content: space-between;
+      justify-content: space-around;
+    }
+    @media screen and (max-width: 768px) {
+      gap: 0px;
     }
   }
 
@@ -39,6 +49,12 @@ export const NavWrapper = styled.nav`
     padding: 8px;
     position: relative;
     flex-shrink: 0;
+  }
+
+  .inner > .menu > li.hidden {
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
 
   .inner > .menu > li:hover > a {

@@ -5,7 +5,7 @@ export default function LayoutIndex({ children }: { children: JSX.Element }) {
   return (
     <SLayoutIndex>
       <SearchHeader />
-      {children}
+      <MainView>{children}</MainView>
       <DefaultFooter />
     </SLayoutIndex>
   );
@@ -15,4 +15,11 @@ const SLayoutIndex = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  /* height: 6000px; */
+`;
+
+const MainView = styled.main`
+  @media screen and (max-width: 640px) {
+    margin-top: 50px;
+  }
 `;

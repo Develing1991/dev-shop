@@ -1,7 +1,10 @@
 import * as S from "./UtilWrapper.styles";
-export default function UtilWrapper() {
+import { forwardRef, ForwardedRef } from "react";
+
+type TUtilRef = ForwardedRef<HTMLDivElement>;
+const UtilWrapper = (props: any, ref: TUtilRef) => {
   return (
-    <S.UtilWrapper>
+    <S.UtilWrapper ref={ref}>
       <div className="inner">
         <ul className="menu1">
           <li>
@@ -37,4 +40,6 @@ export default function UtilWrapper() {
       </div>
     </S.UtilWrapper>
   );
-}
+};
+
+export default forwardRef(UtilWrapper);

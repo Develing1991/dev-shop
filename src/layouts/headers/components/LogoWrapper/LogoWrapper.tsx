@@ -1,12 +1,14 @@
 import * as S from "./LogoWrapper.styles";
-import { useRef } from "react";
-export default function LogoWrapper() {
+import { useRef, forwardRef, ForwardedRef } from "react";
+
+type TLogoRef = ForwardedRef<HTMLDivElement>;
+const LogoWrapper = (props: any, ref: TLogoRef) => {
   const searchRef = useRef<HTMLInputElement>(null);
   const aaa = () => {
     searchRef.current?.focus();
   };
   return (
-    <S.LogoWrapper>
+    <S.LogoWrapper ref={ref}>
       <div className="inner">
         <h1 className="logo">
           <a href="/">
@@ -41,4 +43,6 @@ export default function LogoWrapper() {
       </div>
     </S.LogoWrapper>
   );
-}
+};
+
+export default forwardRef(LogoWrapper);

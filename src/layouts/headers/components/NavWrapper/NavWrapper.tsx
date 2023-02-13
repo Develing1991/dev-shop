@@ -25,14 +25,14 @@ const nav = [
     subMenu: ["탑", "아우터", "드레스", "스커트", "팬츠"],
   },
   { name: "신상품" },
-  { name: "베스트" },
-  { name: "브랜드" },
-  { name: "이벤트" },
+  { name: "베스트", hiddenClass: "hidden" },
+  { name: "브랜드", hiddenClass: "hidden" },
+  { name: "이벤트", hiddenClass: "hidden" },
 ];
 
-export default function NavWrapper() {
+export default function NavWrapper({ flyMode }: { flyMode: boolean }) {
   return (
-    <S.NavWrapper>
+    <S.NavWrapper className={`${flyMode ? "flying" : ""}`}>
       <div className="inner">
         <ul className="menu">
           <li className="menu-icon">
@@ -45,6 +45,7 @@ export default function NavWrapper() {
               key={index}
               name={el.name}
               subMenu={el.subMenu}
+              hiddenClass={el.hiddenClass}
             />
           ))}
         </ul>
