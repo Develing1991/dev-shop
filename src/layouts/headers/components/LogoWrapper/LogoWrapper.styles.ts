@@ -10,6 +10,7 @@ export const LogoWrapper = styled.div`
     top: 0;
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
+    z-index: 9;
   }
 
   .inner {
@@ -29,9 +30,14 @@ export const LogoWrapper = styled.div`
   }
 
   .logo {
+    cursor: pointer;
+    padding: 25px 10px 25px 0;
     flex-shrink: 0;
+    @media screen and (max-width: 768px) {
+      padding: 15px 10px 15px 0;
+    }
     @media screen and (max-width: 480px) {
-      width: 120px;
+      width: 130px;
       margin-right: 10px;
     }
   }
@@ -135,6 +141,6 @@ export const RMenuIcon = styled(GiHamburgerMenu)`
   color: var(--color-pink);
   cursor: pointer;
   @media screen and (max-width: 480px) {
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
   }
 `;

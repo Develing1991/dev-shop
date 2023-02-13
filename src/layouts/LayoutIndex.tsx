@@ -20,6 +20,6 @@ const SLayoutIndex = styled.div`
 
 const MainView = styled.main`
   @media screen and (max-width: 640px) {
-    margin-top: 50px;
+    margin-top: 80px;
   }
 `;
