@@ -24,6 +24,9 @@ export const UtilWrapper = styled.div`
     display: flex;
   }
 
+  .menu2 li:first-of-type {
+    cursor: pointer;
+  }
   .menu1 li a {
     padding: 3px 10px 3px 0;
     font-weight: var(--font-regular);

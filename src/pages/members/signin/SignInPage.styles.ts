@@ -128,6 +128,7 @@ function CommStyled(Icon: IconType) {
   return styled(Icon)`
     width: 40px;
     height: 40px;
+    outline: none;
     cursor: pointer;
     flex-shrink: 0;
   `;

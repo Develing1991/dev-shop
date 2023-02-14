@@ -1,5 +1,17 @@
+import {
+  EProvider,
+  SIGN_IN_WITH_PROVIDER,
+} from "@/src/api/firebase/authentication";
 import * as S from "@/src/pages/members/signin/SignInPage.styles";
+import { isLoggedState } from "@/src/store/authentication";
+import { useRecoilState } from "recoil";
 export default function SignInPage() {
+  const [, setIsLogged] = useRecoilState(isLoggedState);
+  const onClickaaa = (type: EProvider) => () => {
+    SIGN_IN_WITH_PROVIDER(type, () => {
+      setIsLogged(() => true);
+    });
+  };
   return (
     <S.SignInPage>
       <h2 className="title">LOGIN</h2>
@@ -51,7 +63,7 @@ export default function SignInPage() {
         </li>
       </ul>
       <div className="others">
-        <S.GoogleIcon tabIndex={7} />
+        <S.GoogleIcon tabIndex={7} onClick={onClickaaa(EProvider.google)} />
         <S.FacebookIcon tabIndex={8} />
         <S.TwitterIcon tabIndex={9} />
       </div>

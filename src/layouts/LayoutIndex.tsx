@@ -1,7 +1,9 @@
 import DefaultFooter from "./footers/DefaultFooter";
 import SearchHeader from "./headers/SearchHeader";
 import styled from "@emotion/styled";
+import useAuth from "../hooks/useAuth";
 export default function LayoutIndex({ children }: { children: JSX.Element }) {
+  useAuth();
   return (
     <SLayoutIndex>
       <SearchHeader />

@@ -1,9 +1,30 @@
 import * as S from "./UtilWrapper.styles";
-import { forwardRef, ForwardedRef } from "react";
+import { forwardRef, ForwardedRef, useEffect, useState } from "react";
 import Link from "next/link";
+
+import { useRecoilState } from "recoil";
+import { isLoggedState } from "@/src/store/authentication";
+import { useRouter } from "next/router";
 
 type TUtilRef = ForwardedRef<HTMLDivElement>;
 const UtilWrapper = (props: any, ref: TUtilRef) => {
+  const [isLogged] = useRecoilState(isLoggedState);
+  const [buttonText, setButtonText] = useState("");
+  const router = useRouter();
+  useEffect(() => {
+    isLogged ? setButtonText(() => "로그아웃") : setButtonText("로그인");
+  });
+
+  const onSignHandle = () => {
+    if (isLogged) {
+      props.signout();
+      router.push("/");
+      // 로그아웃 되었습니다 메시지.
+      return;
+    }
+    router.push("/members/signin");
+  };
+
   return (
     <S.UtilWrapper ref={ref}>
       <div className="inner">
@@ -19,9 +40,7 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
           </li>
         </ul>
         <ul className="menu2">
-          <li>
-            <Link href="/members/signin">로그인</Link>
-          </li>
+          <li onClick={onSignHandle}>{buttonText}</li>
           <li>
             <Link href="/members/signup">회원가입</Link>
           </li>
