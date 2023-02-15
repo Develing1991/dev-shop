@@ -27,27 +27,11 @@ const SignInProvider = {
   twitter: TwitterAuthProvider,
 };
 
-// export const SIGN_IN_WITH_PROVIDER = (type: EProvider) => {
-//   setPersistence(auth, browserLocalPersistence)
-//     .then(async () => {
-//       return await signInWithPopup(auth, new SignInProvider[type]());
-//     })
-//     .then((result) => {
-//       const credential = SignInProvider[type].credentialFromResult(result);
-//       console.log(result);
-//     })
-//     .catch(console.error);
-// };
 export const SIGN_IN_WITH_PROVIDER = (type: EProvider, cb: () => void) => {
   signInWithPopup(auth, new SignInProvider[type]())
     .then(async (result) => {
-      // const credential = SignInProvider[type].credentialFromResult(result);
-      // console.log(result);
-      // SET_MEMBERS(result.user, result.providerId);
       const members = await GET_MEMBERS();
       if (members) {
-        console.log(members);
-
         const uidList = members.users.map((user: User) => user.uid);
         if (!uidList.includes(result.user.uid)) {
           SET_MEMBERS(result.user, result.providerId);

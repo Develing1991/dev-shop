@@ -24,7 +24,6 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
     }
     router.push("/members/signin");
   };
-  console.log(loginUser);
 
   return (
     <S.UtilWrapper ref={ref}>

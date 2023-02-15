@@ -95,6 +95,7 @@ export const SignUpPage = styled.div`
 
   .terms label {
     margin-left: 10px;
+    cursor: pointer;
   }
 
   .terms ul {
@@ -111,6 +112,10 @@ export const SignUpPage = styled.div`
   .terms li .checkbox {
     display: flex;
     align-items: center;
+  }
+  .terms li .more-terms {
+    display: flex;
+    cursor: pointer;
   }
 
   .terms li label {

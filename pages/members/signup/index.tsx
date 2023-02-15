@@ -3,15 +3,18 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SignUpSchema } from "@/src/pages/members/signup/SignUpPage.validations";
-import { ITerms } from "@/src/pages/members/signup/SignUpPage.types";
+import {
+  ICreateMemberData,
+  ITerms,
+} from "@/src/pages/members/signup/SignUpPage.types";
 
 export default function SignUpPage() {
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(SignUpSchema),
+    mode: "onChange",
   });
-  const onSubmit111 = (data) => {
+  const onSubmitCreateMember = (data: ICreateMemberData) => {
     console.log(data);
-    console.log(123);
   };
 
   const [checkAll, setCheckAll] = useState(false);
@@ -90,7 +93,7 @@ export default function SignUpPage() {
             이메일 <S.CheckIcon />
           </label>
           <input
-            type="text"
+            type="email"
             id="email"
             placeholder="이메일"
             {...register("email")}
@@ -102,7 +105,7 @@ export default function SignUpPage() {
             비밀번호 <S.CheckIcon />
           </label>
           <input
-            type="text"
+            type="password"
             id="password"
             placeholder="비밀번호"
             {...register("password")}
@@ -114,7 +117,7 @@ export default function SignUpPage() {
             비밀번호 확인 <S.CheckIcon />
           </label>
           <input
-            type="text"
+            type="password"
             id="passwordConfirm"
             placeholder="비밀번호 확인"
             {...register("passwordConfirm")}
@@ -188,7 +191,7 @@ export default function SignUpPage() {
                 <span className="required">(필수)</span>
               </label>
             </div>
-            <span>보기</span>
+            <span className="more-terms">보기</span>
           </li>
           <li>
             <div
@@ -205,7 +208,7 @@ export default function SignUpPage() {
                 <span className="required">(필수)</span>
               </label>
             </div>
-            <span>보기</span>
+            <span className="more-terms">보기</span>
           </li>
           <li>
             <div
@@ -222,7 +225,7 @@ export default function SignUpPage() {
                 <span>(선택)</span>
               </label>
             </div>
-            <span>보기</span>
+            <span className="more-terms">보기</span>
           </li>
           <li>
             <div className="ad-check">
@@ -246,7 +249,10 @@ export default function SignUpPage() {
           </li>
         </ul>
       </div>
-      <button className="signup-btn" onClick={handleSubmit(onSubmit111)}>
+      <button
+        className="signup-btn"
+        onClick={handleSubmit(onSubmitCreateMember)}
+      >
         회원가입
       </button>
     </S.SignUpPage>
