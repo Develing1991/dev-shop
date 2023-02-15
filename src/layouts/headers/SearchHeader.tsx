@@ -5,13 +5,14 @@ import _ from "lodash";
 
 import { useEffect, useRef, useState } from "react";
 
-import { useRecoilState } from "recoil";
+import { useResetRecoilState } from "recoil";
 import { isLoggedState, loginUserState } from "@/src/store/authentication";
 import { ON_SING_OUT } from "@/src/api/firebase/authentication";
 
 export default function SearchHeader() {
-  const [, setLoginUser] = useRecoilState(loginUserState);
-  const [, setIsLogged] = useRecoilState(isLoggedState);
+  const loginUserReset = useResetRecoilState(loginUserState);
+  const isLoggedReset = useResetRecoilState(isLoggedState);
+
   const utilRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const [flyMode, setFlyMode] = useState(false);
@@ -36,8 +37,9 @@ export default function SearchHeader() {
 
   const signout = () => {
     ON_SING_OUT();
-    setIsLogged(() => false);
-    setLoginUser(() => ({}));
+    // setIsLogged(() => false);
+    isLoggedReset();
+    loginUserReset();
   };
 
   return (

@@ -12,6 +12,7 @@ import {
   // setPersistence,
   // browserLocalPersistence,
 } from "firebase/auth";
+import { GET_MEMBERS, SET_MEMBERS } from "../database/members";
 
 const auth = getAuth(app);
 
@@ -39,10 +40,19 @@ const SignInProvider = {
 // };
 export const SIGN_IN_WITH_PROVIDER = (type: EProvider, cb: () => void) => {
   signInWithPopup(auth, new SignInProvider[type]())
-    .then((result) => {
-      const credential = SignInProvider[type].credentialFromResult(result);
-      console.log(result);
-      console.log(credential);
+    .then(async (result) => {
+      // const credential = SignInProvider[type].credentialFromResult(result);
+      // console.log(result);
+      // SET_MEMBERS(result.user, result.providerId);
+      const members = await GET_MEMBERS();
+      if (members) {
+        console.log(members);
+
+        const uidList = members.users.map((user: User) => user.uid);
+        if (!uidList.includes(result.user.uid)) {
+          SET_MEMBERS(result.user, result.providerId);
+        }
+      }
       cb();
     })
     .catch(console.error);
@@ -62,12 +72,19 @@ export const SIGN_IN_WITH_EMAIL_AND_PASSWORD = async (
     });
 };
 
-export const ON_AUTH_STATE_CHANGED = (cb: (user: User | null) => void) => {
+interface MembUser extends User {
+  admin: boolean;
+}
+export const ON_AUTH_STATE_CHANGED = (cb: (user: MembUser) => void) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      // const uid = user.uid;
-      // console.log(user);
-      cb(user);
+      GET_MEMBERS().then((members) => {
+        const Memberuser = members?.users.find(
+          (muser: MembUser) => muser.uid === user.uid
+        );
+        cb(Memberuser);
+      });
+
       // ...
     } else {
       // User is signed out

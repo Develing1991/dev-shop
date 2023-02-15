@@ -3,18 +3,18 @@ import { forwardRef, ForwardedRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { useRecoilState } from "recoil";
-import { isLoggedState } from "@/src/store/authentication";
+import { isLoggedState, loginUserState } from "@/src/store/authentication";
 import { useRouter } from "next/router";
 
 type TUtilRef = ForwardedRef<HTMLDivElement>;
 const UtilWrapper = (props: any, ref: TUtilRef) => {
   const [isLogged] = useRecoilState(isLoggedState);
+  const [loginUser] = useRecoilState(loginUserState);
   const [buttonText, setButtonText] = useState("");
   const router = useRouter();
   useEffect(() => {
     isLogged ? setButtonText(() => "로그아웃") : setButtonText("로그인");
   });
-
   const onSignHandle = () => {
     if (isLogged) {
       props.signout();
@@ -24,6 +24,7 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
     }
     router.push("/members/signin");
   };
+  console.log(loginUser);
 
   return (
     <S.UtilWrapper ref={ref}>
@@ -41,9 +42,16 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
         </ul>
         <ul className="menu2">
           <li onClick={onSignHandle}>{buttonText}</li>
-          <li>
-            <Link href="/members/signup">회원가입</Link>
-          </li>
+          {loginUser.admin && (
+            <li>
+              <Link href="/members/aaa">상품등록</Link>
+            </li>
+          )}
+          {!loginUser.displayName && (
+            <li>
+              <Link href="/members/signup">회원가입</Link>
+            </li>
+          )}
           <li>
             <Link href="/members/orders/cartlist">장바구니</Link>
           </li>
