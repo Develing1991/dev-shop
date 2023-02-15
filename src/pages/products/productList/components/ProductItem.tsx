@@ -1,21 +1,27 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import * as S from "./ProductItem.styles";
 interface IProductItem {
   grid: string;
 }
 export default function ProductItem({ grid }: IProductItem) {
+  const router = useRouter();
+  const onMoveTo = () => {
+    router.push("/products/productDetail");
+  };
   return (
     <S.ProductItem grid={grid}>
       <div className="image-area">
-        <a href="#">
+        <Link href="/products/productDetail">
           <img
             src="http://responsive-sample42.firstmall.kr/data/goods/1/2021/12/31_temp_16383453480875list1.jpg"
             alt="이미지1"
           />
-        </a>
+        </Link>
       </div>
       <div>
-        <h4 className="title">
+        <h4 className="title" onClick={onMoveTo}>
           <span className="brand">SK-II</span> 세련된 혼합형 배너 제공
         </h4>
         <div className="description">

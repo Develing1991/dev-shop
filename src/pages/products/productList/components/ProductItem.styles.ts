@@ -20,6 +20,7 @@ export const ProductItem = styled.div`
   }
   .image-area {
     object-fit: cover;
+    cursor: pointer;
   }
 
   .title {

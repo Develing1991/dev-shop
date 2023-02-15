@@ -14,4 +14,7 @@ export const ImageCard = styled.div`
       grid-template-columns: repeat(1, 1fr);
     }
   }
+  li {
+    cursor: pointer;
+  }
 `;
