@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.11",
     "@next/font": "13.1.6",
     "@tanstack/react-query": "^4.24.6",
     "@tanstack/react-query-devtools": "^4.24.6",
@@ -20,13 +21,15 @@
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
     "react-slick": "^0.29.0",
     "recoil": "^0.7.6",
     "recoil-persist": "^4.2.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^9.0.4",
-    "typescript": "*"
+    "typescript": "*",
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",

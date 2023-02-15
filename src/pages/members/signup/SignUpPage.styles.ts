@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import { MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
+
 export const SignUpPage = styled.div`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 100%;
   max-width: 500px;
   margin: auto;
   align-items: center;
@@ -28,6 +30,7 @@ export const SignUpPage = styled.div`
     }
   }
   form {
+    width: 100%;
     border: 1px solid var(--color-gray-0);
     padding: 50px 20px;
     border-radius: 4px;
@@ -46,6 +49,10 @@ export const SignUpPage = styled.div`
     padding: 10px 15px;
     border: 1px solid var(--color-gray-0);
     font-size: var(--text-lg);
+  }
+  form .error {
+    color: var(--color-red);
+    font-size: var(--text-sm);
   }
   .phone-number {
     display: flex;
@@ -86,10 +93,6 @@ export const SignUpPage = styled.div`
     }
   }
 
-  .terms input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-  }
   .terms label {
     margin-left: 10px;
   }
@@ -105,6 +108,11 @@ export const SignUpPage = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+  .terms li .checkbox {
+    display: flex;
+    align-items: center;
+  }
+
   .terms li label {
   }
   .terms .required {
@@ -149,4 +157,15 @@ export const CheckIcon = styled(AiOutlineCheckCircle)`
   color: var(--color-orange);
 
   vertical-align: bottom;
+`;
+export const CheckboxBlankIcon = styled(MdCheckBoxOutlineBlank)`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+`;
+export const CheckboxFillIcon = styled(MdCheckBox)`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  color: green;
 `;
