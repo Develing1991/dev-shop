@@ -32,9 +32,10 @@ export default css`
     --color-blue-0:#007cd2;
     --color-blue-1:#697ba4;
     --color-pink:#ff93a0;
+    --color-pink-0:#fad4d9;
     --color-red:#f30b0b;
     --color-orange:#ec5903;
-    --color-beige-0: #fff49d;
+    --color-beige-0: #fffad2;
     --color-gray-0:#ddd;
     --color-gray-1:#999;
     --color-gray-2:#767676;

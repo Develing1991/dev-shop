@@ -1,6 +1,7 @@
 import LogoWrapper from "./components/LogoWrapper/LogoWrapper";
 import NavWrapper from "./components/NavWrapper/NavWrapper";
 import UtilWrapper from "./components/UtilWrapper/UtilWrapper";
+import XSlideMenu from "./components/XSlideMenu/XSlideMenu";
 import _ from "lodash";
 
 import { useEffect, useRef, useState } from "react";
@@ -47,6 +48,7 @@ export default function SearchHeader() {
       <UtilWrapper ref={utilRef} signout={signout} />
       <LogoWrapper ref={logoRef} />
       <NavWrapper flyMode={flyMode} />
+      <XSlideMenu />
     </header>
   );
 }

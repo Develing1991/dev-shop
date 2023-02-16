@@ -1,5 +1,8 @@
 import * as S from "./LogoWrapper.styles";
 import { useRef, forwardRef, ForwardedRef } from "react";
+import { xSlideState } from "@src/store/slides";
+import { useRecoilState } from "recoil";
+
 import Link from "next/link";
 
 type TLogoRef = ForwardedRef<HTMLDivElement>;
@@ -7,6 +10,10 @@ const LogoWrapper = (props: any, ref: TLogoRef) => {
   const searchRef = useRef<HTMLInputElement>(null);
   const aaa = () => {
     searchRef.current?.focus();
+  };
+  const [, setXSlide] = useRecoilState(xSlideState);
+  const onShowXSlide = () => {
+    setXSlide(() => true);
   };
   return (
     <S.LogoWrapper ref={ref}>
@@ -39,7 +46,7 @@ const LogoWrapper = (props: any, ref: TLogoRef) => {
             <S.RShopIcon />
             <div className="badge">N</div>
           </div>
-          <S.RMenuIcon className="menu-icon" />
+          <S.RMenuIcon className="menu-icon" onClick={onShowXSlide} />
         </S.IconBox>
       </div>
     </S.LogoWrapper>

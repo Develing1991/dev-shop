@@ -1,3 +1,5 @@
+import { xSlideState } from "@src/store/slides";
+import { useRecoilState } from "recoil";
 import * as S from "./NavWrapper.styles";
 import NavWrapperSubMenu from "./NavWrapperSubMenu";
 
@@ -31,14 +33,16 @@ const nav = [
 ];
 
 export default function NavWrapper({ flyMode }: { flyMode: boolean }) {
+  const [, setXSlide] = useRecoilState(xSlideState);
+  const onShowXSlide = () => {
+    setXSlide(() => true);
+  };
   return (
     <S.NavWrapper className={`${flyMode ? "flying" : ""}`}>
       <div className="inner">
         <ul className="menu">
           <li className="menu-icon">
-            <a href="#">
-              <S.MenuIcon />
-            </a>
+            <S.MenuIcon onClick={onShowXSlide} />
           </li>
           {nav.map((el, index) => (
             <NavWrapperSubMenu
