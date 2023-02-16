@@ -19,12 +19,6 @@
       "@src/*": ["src/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/pages/members/signin",
-    "src/pages/members/signup"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@src/*"],
   "exclude": ["node_modules"]
 }
