@@ -6,7 +6,7 @@ import { modalState } from "@/src/store/modals";
 
 export default function Modal() {
   const [modal] = useRecoilState(modalState);
-  const { permanent, title, contents, confirm, action } = modal;
+  const { permanent, title, contents, confirm, action, isAction } = modal;
   const resetModal = useResetRecoilState(modalState);
 
   const onLayerAction = (event: MouseEvent<HTMLDivElement>) => {
@@ -27,12 +27,14 @@ export default function Modal() {
       <div className="inner">
         {title && <div className="title">{title}</div>}
         <div className="contents">{contents}</div>
-        <div className="actions">
-          <Button reverse onClick={onExactAction}>
-            확인
-          </Button>
-          {confirm && <Button onClick={resetModal}>닫기</Button>}
-        </div>
+        {isAction && (
+          <div className="actions">
+            <Button reverse onClick={onExactAction}>
+              확인
+            </Button>
+            {confirm && <Button onClick={resetModal}>닫기</Button>}
+          </div>
+        )}
       </div>
     </ModalLayer>
   );

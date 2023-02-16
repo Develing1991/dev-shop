@@ -7,15 +7,17 @@ import {
   ICreateMemberData,
   ITerms,
 } from "@/src/pages/members/signup/SignUpPage.types";
+import { useRecoilState } from "recoil";
+import { modalState } from "@/src/store/modals";
+import { Postcode } from "@/src/components/daum/Postcode";
+import { Address } from "react-daum-postcode";
 
 export default function SignUpPage() {
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(SignUpSchema),
     mode: "onChange",
   });
-  const onSubmitCreateMember = (data: ICreateMemberData) => {
-    console.log(data);
-  };
+  const [, setModal] = useRecoilState(modalState);
 
   const [checkAll, setCheckAll] = useState(false);
   const [checkList, setCheckList] = useState<ITerms>({
@@ -27,6 +29,10 @@ export default function SignUpPage() {
     market1: false,
     market2: false,
   });
+
+  const onSubmitCreateMember = (data: ICreateMemberData) => {
+    console.log(data);
+  };
 
   const onClickCheckTerms =
     (type: string, typeValue: string = "") =>
@@ -81,8 +87,28 @@ export default function SignUpPage() {
     }));
   }, [checkMarket]);
 
+  const onFindAdress = () => {
+    setModal(() => ({
+      open: true,
+      permanent: true,
+      title: "주소찾기",
+      contents: <Postcode onSetAddress={onSetAddress} />,
+      confirm: false,
+      isAction: false,
+    }));
+  };
+  const [memAddress, setMemAddress] = useState({
+    address: "",
+    zonecode: "",
+  });
+  const onSetAddress = (data: Address) => {
+    setMemAddress(() => ({
+      ...data,
+    }));
+  };
   return (
     <S.SignUpPage>
+      {/* <Postcode /> */}
       <h2 className="title">회원가입</h2>
       <h3 className="notice">
         <S.CheckIcon /> 항목은 <span>필수 입력</span> 항목 입니다.
@@ -160,10 +186,23 @@ export default function SignUpPage() {
               className="readonly"
               readOnly
               title="우편번호"
+              defaultValue={memAddress.zonecode}
             />
-            <button className="address-btn">주소찾기</button>
+            <button
+              className="address-btn"
+              type="button"
+              onClick={onFindAdress}
+            >
+              주소찾기
+            </button>
           </div>
-          <input type="text" title="기본주소" className="readonly" readOnly />
+          <input
+            type="text"
+            title="기본주소"
+            className="readonly"
+            readOnly
+            defaultValue={memAddress.address}
+          />
           <input type="text" title="상세주소" />
         </div>
       </form>

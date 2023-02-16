@@ -1,6 +1,14 @@
 import { atom } from "recoil";
-
-export const modalState = atom({
+interface ImodalState {
+  open: boolean;
+  permanent: boolean;
+  title: string;
+  contents: JSX.Element | string;
+  confirm: boolean;
+  action: () => void;
+  isAction: boolean;
+}
+export const modalState = atom<Partial<ImodalState>>({
   key: "modalState",
   default: {
     open: false,
@@ -9,5 +17,6 @@ export const modalState = atom({
     contents: "",
     confirm: false,
     action: () => {},
+    isAction: true,
   },
 });
