@@ -3,22 +3,35 @@ import XSlideMenuItem from "./XSlideMenuItem";
 import { xSlideState } from "@src/store/slides";
 import { useRecoilState } from "recoil";
 import { SyntheticEvent } from "react";
+import { useRouter } from "next/router";
 export default function XSlideMenu() {
   const [xSlide, setXSlide] = useRecoilState(xSlideState);
+  const router = useRouter();
   const onHideXSlide = (event: SyntheticEvent) => {
     if (event.currentTarget === event.target) {
       setXSlide(() => false);
     }
+  };
+
+  const onClickMoveTo = (url: string) => () => {
+    if (router.asPath !== url) {
+      router.push(url);
+    }
+    setXSlide(() => false);
   };
   return (
     <S.XSlideMenu show={xSlide}>
       <div className="container" onClick={onHideXSlide}>
         <div className="slide-menu">
           <div className="login">
-            <span className="text">로그인하세요.</span>
+            <span className="text">로그인 -</span>
             <div className="actions">
-              <S.ActionButton>로그인</S.ActionButton>
-              <S.ActionButton>회원가입</S.ActionButton>
+              <S.ActionButton onClick={onClickMoveTo("/members/signin")}>
+                로그인
+              </S.ActionButton>
+              <S.ActionButton onClick={onClickMoveTo("/members/signup")}>
+                회원가입
+              </S.ActionButton>
               <S.CloseButton
                 onClick={() => {
                   setXSlide(() => false);
