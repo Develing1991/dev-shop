@@ -3,7 +3,7 @@ import { forwardRef, ForwardedRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { useRecoilState } from "recoil";
-import { isLoggedState, loginUserState } from "@/src/store/authentication";
+import { isLoggedState, loginUserState } from "@src/store/authentication";
 import { useRouter } from "next/router";
 
 type TUtilRef = ForwardedRef<HTMLDivElement>;

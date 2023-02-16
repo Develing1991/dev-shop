@@ -1,7 +1,7 @@
-import ProductItem from "@/src/pages/products/productList/components/ProductItem";
-import SearchFilter from "@/src/pages/products/productList/components/SearchFilter";
-import SearchNav from "@/src/pages/products/productList/components/SearchNav";
-import * as S from "@/src/pages/products/productList/ProductListPage.styles";
+import ProductItem from "@src/pages/products/productList/components/ProductItem";
+import SearchFilter from "@src/pages/products/productList/components/SearchFilter";
+import SearchNav from "@src/pages/products/productList/components/SearchNav";
+import * as S from "@src/pages/products/productList/ProductListPage.styles";
 import { useState } from "react";
 export default function ProductListPage() {
   const [grid, setGrid] = useState("grid-box"); // grid-box:4, grid-list:2

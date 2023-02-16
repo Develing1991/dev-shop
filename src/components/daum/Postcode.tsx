@@ -1,4 +1,4 @@
-import { modalState } from "@/src/store/modals";
+import { modalState } from "@src/store/modals";
 import DaumPostcodeEmbed, { Address } from "react-daum-postcode";
 import { useResetRecoilState } from "recoil";
 export const Postcode = ({

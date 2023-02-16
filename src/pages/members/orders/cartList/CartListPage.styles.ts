@@ -1,4 +1,4 @@
-import { Button } from "@/src/components/buttons/Button.styles";
+import { Button } from "@src/components/buttons/Button.styles";
 import styled from "@emotion/styled";
 import { IconType } from "react-icons/lib";
 import { TfiClose } from "react-icons/tfi";

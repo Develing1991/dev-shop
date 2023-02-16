@@ -1,15 +1,15 @@
-import * as S from "@/src/pages/members/signup/SignUpPage.styles";
+import * as S from "@src/pages/members/signup/SignUpPage.styles";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { SignUpSchema } from "@/src/pages/members/signup/SignUpPage.validations";
+import { SignUpSchema } from "@src/pages/members/signup/SignUpPage.validations";
 import {
   ICreateMemberData,
   ITerms,
-} from "@/src/pages/members/signup/SignUpPage.types";
+} from "@src/pages/members/signup/SignUpPage.types";
 import { useRecoilState } from "recoil";
-import { modalState } from "@/src/store/modals";
-import { Postcode } from "@/src/components/daum/Postcode";
+import { modalState } from "@src/store/modals";
+import { Postcode } from "@src/components/daum/Postcode";
 import { Address } from "react-daum-postcode";
 
 export default function SignUpPage() {

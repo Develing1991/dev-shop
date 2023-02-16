@@ -1,4 +1,4 @@
-import * as S from "@/src/pages/members/orders/cartlist/CartListPage.styles";
+import * as S from "@src/pages/members/orders/cartlist/CartListPage.styles";
 
 export default function CartListPage() {
   return (

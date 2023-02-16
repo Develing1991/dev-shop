@@ -1,9 +1,9 @@
 import {
   EProvider,
   SIGN_IN_WITH_PROVIDER,
-} from "@/src/api/firebase/authentication";
-import * as S from "@/src/pages/members/signin/SignInPage.styles";
-import { isLoggedState } from "@/src/store/authentication";
+} from "@src/api/firebase/authentication";
+import * as S from "@src/pages/members/signin/SignInPage.styles";
+import { isLoggedState } from "@src/store/authentication";
 import { useRecoilState } from "recoil";
 export default function SignInPage() {
   const [, setIsLogged] = useRecoilState(isLoggedState);

@@ -1,4 +1,4 @@
-import DefaultMain from "@/src/layouts/main/DefaultMain";
+import DefaultMain from "@src/layouts/main/DefaultMain";
 import Head from "next/head";
 
 export default function Home() {

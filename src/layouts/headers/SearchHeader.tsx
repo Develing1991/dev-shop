@@ -6,8 +6,8 @@ import _ from "lodash";
 import { useEffect, useRef, useState } from "react";
 
 import { useResetRecoilState } from "recoil";
-import { isLoggedState, loginUserState } from "@/src/store/authentication";
-import { ON_SING_OUT } from "@/src/api/firebase/authentication";
+import { isLoggedState, loginUserState } from "@src/store/authentication";
+import { ON_SING_OUT } from "@src/api/firebase/authentication";
 
 export default function SearchHeader() {
   const loginUserReset = useResetRecoilState(loginUserState);

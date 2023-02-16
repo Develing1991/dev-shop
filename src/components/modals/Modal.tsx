@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 import styled from "@emotion/styled";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { Button } from "../buttons/Button.styles";
-import { modalState } from "@/src/store/modals";
+import { modalState } from "@src/store/modals";
 
 export default function Modal() {
   const [modal] = useRecoilState(modalState);

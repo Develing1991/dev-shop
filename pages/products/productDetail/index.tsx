@@ -1,8 +1,8 @@
-import ActionButton from "@/src/pages/products/productDetail/components/ActionButton";
-import DropDownMenu from "@/src/pages/products/productDetail/components/DropDownMenu";
-import SelectedOption from "@/src/pages/products/productDetail/components/SelectedOption";
-import SliderImage from "@/src/pages/products/productDetail/components/SliderImage";
-import * as S from "@/src/pages/products/productDetail/ProductDetailPage.styles";
+import ActionButton from "@src/pages/products/productDetail/components/ActionButton";
+import DropDownMenu from "@src/pages/products/productDetail/components/DropDownMenu";
+import SelectedOption from "@src/pages/products/productDetail/components/SelectedOption";
+import SliderImage from "@src/pages/products/productDetail/components/SliderImage";
+import * as S from "@src/pages/products/productDetail/ProductDetailPage.styles";
 import { useState } from "react";
 export default function ProductDetailPage() {
   const [selectOption, setSelectOption] = useState("");
