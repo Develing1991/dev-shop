@@ -1,3 +1,4 @@
+import Link from "next/link";
 import * as S from "./CardItem.styles";
 interface ICardItem {
   image: string;
@@ -20,9 +21,9 @@ export default function CardItem({
   return (
     <S.CardItem className="card-item" center={center}>
       <div className="image-area">
-        <a href="#">
+        <Link href="/products/productDetail">
           <img src={image} alt="이미지1" />
-        </a>
+        </Link>
       </div>
       <h4 className="title">{title}</h4>
       <div className="subtitle">

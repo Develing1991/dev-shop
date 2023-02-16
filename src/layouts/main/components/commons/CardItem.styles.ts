@@ -12,6 +12,7 @@ export const CardItem = styled.div`
   .image-area {
     /* max-width: 320px; */
     margin-bottom: 10px;
+    cursor: pointer;
   }
   .image-area:hover {
     border: 1px solid var(--color-gray-0);
