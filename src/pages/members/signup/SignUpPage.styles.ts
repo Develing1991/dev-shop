@@ -62,17 +62,30 @@ export const SignUpPage = styled.div`
   .zipcode-group {
     display: flex;
     gap: 10px;
+    width: 100%;
+    @media screen and (max-width: 360px) {
+      flex-direction: column;
+    }
   }
   .zipcode-group #address {
-    width: 100px;
+    max-width: 100px;
+    @media screen and (max-width: 360px) {
+      max-width: 100%;
+    }
   }
   .zipcode-group .address-btn {
+    width: 100%;
+    max-width: 90px;
     padding: 0 10px;
     background-color: var(--color-black);
     color: var(--color-white);
     font-weight: var(--font-bold);
     font-size: var(--text-base);
     border-radius: 4px;
+    @media screen and (max-width: 360px) {
+      padding: 10px;
+      max-width: 100%;
+    }
   }
   .zipcode-group .address-btn:hover {
     opacity: 0.8;
@@ -87,7 +100,7 @@ export const SignUpPage = styled.div`
     border-radius: 4px;
     padding: 20px;
     width: 100%;
-    font-size: var(--text-xl);
+    font-size: var(--text-regular);
     @media screen and (max-width: 480px) {
       font-size: var(--text-base);
     }
@@ -108,21 +121,31 @@ export const SignUpPage = styled.div`
     gap: 10px;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 360px) {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
   }
+
+  .terms li:last-child {
+    align-self: flex-start;
+  }
+
   .terms li .checkbox {
     display: flex;
     align-items: center;
+    width: 100%;
   }
   .terms li .more-terms {
     display: flex;
     cursor: pointer;
   }
 
-  .terms li label {
-  }
   .terms .required {
     font-weight: var(--font-bold);
   }
+
   .ad-check {
     margin-left: 30px;
     display: flex;
@@ -160,17 +183,16 @@ export const SignUpPage = styled.div`
 
 export const CheckIcon = styled(AiOutlineCheckCircle)`
   color: var(--color-orange);
-
   vertical-align: bottom;
 `;
 export const CheckboxBlankIcon = styled(MdCheckBoxOutlineBlank)`
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
 `;
 export const CheckboxFillIcon = styled(MdCheckBox)`
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   color: green;
 `;
