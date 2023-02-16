@@ -1,7 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-현재 작업 진행중입니다..
-https://dev-shop-alpha.vercel.app/
+현재 작업 진행중입니다.. <br/>
+
+## 배포 사이트 : https://dev-shop-alpha.vercel.app/
 
 ## Getting Started
 
