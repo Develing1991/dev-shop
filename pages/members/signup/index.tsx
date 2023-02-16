@@ -17,6 +17,7 @@ export default function SignUpPage() {
     resolver: yupResolver(SignUpSchema),
     mode: "onChange",
   });
+
   const [, setModal] = useRecoilState(modalState);
 
   const [checkAll, setCheckAll] = useState(false);
@@ -31,6 +32,19 @@ export default function SignUpPage() {
   });
 
   const onSubmitCreateMember = (data: ICreateMemberData) => {
+    const { shop1, shop2 } = checkList;
+    console.log(shop1);
+
+    if (!shop1 || !shop2) {
+      setModal((prev) => ({
+        ...prev,
+        open: true,
+        title: "약관동의",
+        contents: "필수 약관동의를 체크해주세요.",
+        confirm: false,
+      }));
+      return;
+    }
     console.log(data);
   };
 
@@ -88,12 +102,11 @@ export default function SignUpPage() {
   }, [checkMarket]);
 
   const onFindAdress = () => {
-    setModal(() => ({
+    setModal((prev) => ({
+      ...prev,
       open: true,
-      permanent: true,
       title: "주소찾기",
       contents: <Postcode onSetAddress={onSetAddress} />,
-      confirm: false,
       isAction: false,
     }));
   };
