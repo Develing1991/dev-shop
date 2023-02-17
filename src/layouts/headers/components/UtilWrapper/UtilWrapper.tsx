@@ -5,21 +5,32 @@ import Link from "next/link";
 import { useRecoilState } from "recoil";
 import { isLoggedState, loginUserState } from "@src/store/authentication";
 import { useRouter } from "next/router";
+import { modalState } from "@src/store/modals";
 
 type TUtilRef = ForwardedRef<HTMLDivElement>;
 const UtilWrapper = (props: any, ref: TUtilRef) => {
   const [isLogged] = useRecoilState(isLoggedState);
   const [loginUser] = useRecoilState(loginUserState);
   const [buttonText, setButtonText] = useState("");
+  const [, setModal] = useRecoilState(modalState);
   const router = useRouter();
   useEffect(() => {
     isLogged ? setButtonText(() => "로그아웃") : setButtonText("로그인");
   });
   const onSignHandle = () => {
     if (isLogged) {
-      props.signout();
-      router.push("/");
-      // 로그아웃 되었습니다 메시지.
+      setModal((prev) => ({
+        ...prev,
+        open: true,
+        permanent: true,
+        title: "로그아웃",
+        contents: "정상 로그아웃 처리 되었습니다.",
+        action: () => {
+          props.signout();
+          router.push("/");
+        },
+        confirm: false,
+      }));
       return;
     }
     router.push("/members/signin");

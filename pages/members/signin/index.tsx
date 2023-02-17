@@ -8,10 +8,12 @@ import { isLoggedState } from "@src/store/authentication";
 import { useRecoilState } from "recoil";
 import { useState, SyntheticEvent } from "react";
 import { modalState } from "@src/store/modals";
+import { useRouter } from "next/router";
+
 export default function SignInPage() {
   const [, setIsLogged] = useRecoilState(isLoggedState);
   const [, setModal] = useRecoilState(modalState);
-
+  const router = useRouter();
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -29,13 +31,26 @@ export default function SignInPage() {
       [name]: value,
     }));
   };
-  const onSignInEmailAndPassword = () => {
+  const onSignInEmailAndPassword = (event: any) => {
+    if (event.type === "keydown" && event.code !== "Enter") {
+      return;
+    }
     const { email, password } = loginInfo;
     SIGN_IN_WITH_EMAIL_AND_PASSWORD(
       email,
       password,
       () => {
-        setIsLogged(() => true);
+        setModal((prev) => ({
+          ...prev,
+          open: true,
+          title: "로그인 성공",
+          action: () => {
+            setIsLogged(() => true);
+            router.push("/");
+          },
+          contents: "로그인처리 되었습니다.",
+          confirm: false,
+        }));
       },
       () => {
         setModal((prev) => ({
@@ -71,6 +86,7 @@ export default function SignInPage() {
           placeholder="비밀번호"
           name="password"
           onChange={onChangeInput}
+          onKeyDown={onSignInEmailAndPassword}
           tabIndex={2}
         />
         <div className="save">
