@@ -50,7 +50,9 @@ export const SIGN_IN_WITH_PROVIDER = (type: EProvider, cb: () => void) => {
           SET_MEMBERS(CreateUser);
         }
       }
-      cb();
+      if (cb) {
+        cb();
+      }
     })
     .catch(console.error);
 };
@@ -65,10 +67,14 @@ export const SIGN_IN_WITH_EMAIL_AND_PASSWORD = async (
     .then((userCredential) => {
       // const user = userCredential.user;
       // console.log(user);
-      cb();
+      if (cb) {
+        cb();
+      }
     })
     .catch(() => {
-      errCb();
+      if (errCb) {
+        errCb();
+      }
     });
 };
 
@@ -79,7 +85,9 @@ export const ON_AUTH_STATE_CHANGED = (cb: (user: IMembStateChange) => void) => {
         const Memberuser = members?.users.find(
           (muser: IMembStateChange) => muser.uid === user.uid
         );
-        cb(Memberuser);
+        if (cb) {
+          cb(Memberuser);
+        }
       });
 
       // ...
@@ -90,12 +98,15 @@ export const ON_AUTH_STATE_CHANGED = (cb: (user: IMembStateChange) => void) => {
   });
 };
 
-export const ON_SING_OUT = () => {
+export const ON_SING_OUT = (cb?: () => void) => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
       console.log("로그아웃");
       localStorage.setItem("isLogged", JSON.stringify(false));
+      if (cb) {
+        cb();
+      }
     })
     .catch(console.error);
 };
@@ -122,7 +133,9 @@ export const CREATE_USER_WITH_EMAIL_AND_PASSWORD = (
             zonecode: membUser.zonecode,
           };
           SET_MEMBERS(CreateUser).then(() => {
-            cb();
+            if (cb) {
+              cb();
+            }
           });
         }
       }

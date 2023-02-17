@@ -16,7 +16,7 @@ const UtilWrapper = (props: any, ref: TUtilRef) => {
   const router = useRouter();
   useEffect(() => {
     isLogged ? setButtonText(() => "로그아웃") : setButtonText("로그인");
-  });
+  }, [isLogged]);
   const onSignHandle = () => {
     if (isLogged) {
       setModal((prev) => ({
