@@ -7,12 +7,13 @@ import Modal from "../components/modals/Modal";
 import Portal from "../utils/Portal";
 import { useRecoilState } from "recoil";
 import { modalState } from "../store/modals";
+import { xSlideState } from "@src/store/slides";
 export default function LayoutIndex({ children }: { children: JSX.Element }) {
   const [modal] = useRecoilState(modalState);
-
+  const [xSlide] = useRecoilState(xSlideState);
   useAuth();
   return (
-    <SLayoutIndex>
+    <SLayoutIndex fixed={xSlide}>
       <SearchHeader />
       <MainView>{children}</MainView>
       <DefaultFooter />
@@ -25,6 +26,7 @@ export default function LayoutIndex({ children }: { children: JSX.Element }) {
   );
 }
 const SLayoutIndex = styled.div`
+  position: ${({ fixed }: { fixed: boolean }) => (fixed ? "fixed" : "static")};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

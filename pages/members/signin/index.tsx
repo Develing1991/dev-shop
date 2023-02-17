@@ -9,6 +9,7 @@ import { useRecoilState } from "recoil";
 import { useState, SyntheticEvent } from "react";
 import { modalState } from "@src/store/modals";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function SignInPage() {
   const [, setIsLogged] = useRecoilState(isLoggedState);
@@ -119,9 +120,7 @@ export default function SignInPage() {
           </a>
         </li>
         <li>
-          <a href="#" tabIndex={6}>
-            회원가입
-          </a>
+          <Link href="/members/signup">회원가입</Link>
         </li>
       </ul>
       <div className="others">

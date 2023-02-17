@@ -84,7 +84,7 @@ export default function XSlideMenu() {
             />
             <XSlideMenuItem
               title="외출"
-              subTitles={["탑", "아우터", "드레스", "스커트", "팬츠"]}
+              subTitles={["메뉴1", "메뉴2", "메뉴3", "메뉴4", "메뉴5"]}
             />
             {/* <li>바디케어</li>
              <li>세제/주방</li>

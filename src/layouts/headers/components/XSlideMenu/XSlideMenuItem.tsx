@@ -17,6 +17,7 @@ export default function XSlideMenuItem({ title, subTitles }: IXSlideMenuItem) {
   const router = useRouter();
   const onClickMoveTo = () => {
     onToggleSub();
+    setShowSub(() => false);
     setXSlide(() => false);
     if (router.asPath !== "/products/productList") {
       router.push("/products/productList");
@@ -24,8 +25,9 @@ export default function XSlideMenuItem({ title, subTitles }: IXSlideMenuItem) {
   };
   return (
     <li>
-      <div className="menu__title">
-        <S.ArrowDown onClick={onToggleSub} />
+      <div className="menu__title" onClick={onToggleSub}>
+        <S.ArrowDown />
+        {/* {title} */}
         <Link href="#">{title}</Link>
       </div>
       <ul className={`menu__sub ${showSub ? "active" : ""}`}>

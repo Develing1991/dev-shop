@@ -48,12 +48,12 @@ export const XSlideMenu = styled.nav`
   .menu {
     margin-top: 20px;
 
-    border-top: 1px solid var(--color-gray-5);
-    border-bottom: 1px solid var(--color-gray-5);
+    border-top: 1px solid var(--color-gray-1);
+    border-bottom: 1px solid var(--color-gray-1);
   }
 
   .menu > li {
-    border-bottom: 1px solid var(--color-gray-3);
+    border-bottom: 1px solid var(--color-gray-1);
   }
 
   .menu > li:last-of-type {
@@ -63,6 +63,7 @@ export const XSlideMenu = styled.nav`
   .menu .menu__title {
     display: flex;
     align-items: stretch;
+    padding: 5px;
   }
   .menu .menu__title:hover {
     background-color: var(--color-beige-0);
@@ -91,7 +92,7 @@ export const XSlideMenu = styled.nav`
     background-color: var(--color-beige-0);
   }
   .menu__sub > li:first-of-type {
-    border-top: 1px solid var(--color-gray-5);
+    border-top: 1px solid var(--color-gray-1);
   }
   .menu__sub > li:last-of-type {
     border-bottom: none;
@@ -100,12 +101,16 @@ export const XSlideMenu = styled.nav`
     display: flex;
     align-items: center;
     padding-left: 10px;
+    font-size: var(--text-sm);
+    color: var(--color-gray-3);
+
     width: 100%;
   }
 `;
 
 export const ActionButton = styled(Button)`
-  padding: 5px;
+  padding: 7px 8px;
+  border-radius: 3px;
 `;
 export const ArrowDown = styled(CommStyled(MdKeyboardArrowDown))``;
 export const ArrowReturn = styled(CommStyled(MdKeyboardArrowRight))`
