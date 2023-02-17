@@ -1,17 +1,54 @@
 import {
   EProvider,
+  SIGN_IN_WITH_EMAIL_AND_PASSWORD,
   SIGN_IN_WITH_PROVIDER,
 } from "@src/api/firebase/authentication";
 import * as S from "@src/pages/members/signin/SignInPage.styles";
 import { isLoggedState } from "@src/store/authentication";
 import { useRecoilState } from "recoil";
+import { useState, SyntheticEvent } from "react";
+import { modalState } from "@src/store/modals";
 export default function SignInPage() {
   const [, setIsLogged] = useRecoilState(isLoggedState);
-  const onClickaaa = (type: EProvider) => () => {
+  const [, setModal] = useRecoilState(modalState);
+
+  const [loginInfo, setLoginInfo] = useState({
+    email: "",
+    password: "",
+  });
+
+  const onSignInProvider = (type: EProvider) => () => {
     SIGN_IN_WITH_PROVIDER(type, () => {
       setIsLogged(() => true);
     });
   };
+  const onChangeInput = (event: SyntheticEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    setLoginInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const onSignInEmailAndPassword = () => {
+    const { email, password } = loginInfo;
+    SIGN_IN_WITH_EMAIL_AND_PASSWORD(
+      email,
+      password,
+      () => {
+        setIsLogged(() => true);
+      },
+      () => {
+        setModal((prev) => ({
+          ...prev,
+          open: true,
+          title: "로그인 실패",
+          contents: "회원 정보가 일치하지 않습니다",
+          confirm: false,
+        }));
+      }
+    );
+  };
+
   return (
     <S.SignInPage>
       <h2 className="title">LOGIN</h2>
@@ -22,6 +59,8 @@ export default function SignInPage() {
           id="email"
           className="email"
           placeholder="이메일"
+          name="email"
+          onChange={onChangeInput}
           tabIndex={1}
         />
         <label htmlFor="password" />
@@ -30,6 +69,8 @@ export default function SignInPage() {
           id="password"
           className="password"
           placeholder="비밀번호"
+          name="password"
+          onChange={onChangeInput}
           tabIndex={2}
         />
         <div className="save">
@@ -41,7 +82,12 @@ export default function SignInPage() {
           />
           <label htmlFor="saveId">아이디 저장</label>
         </div>
-        <button type="submit" className="signin-btn" tabIndex={4}>
+        <button
+          type="button"
+          className="signin-btn"
+          tabIndex={4}
+          onClick={onSignInEmailAndPassword}
+        >
           로그인
         </button>
       </form>
@@ -63,7 +109,10 @@ export default function SignInPage() {
         </li>
       </ul>
       <div className="others">
-        <S.GoogleIcon tabIndex={7} onClick={onClickaaa(EProvider.google)} />
+        <S.GoogleIcon
+          tabIndex={7}
+          onClick={onSignInProvider(EProvider.google)}
+        />
         <S.FacebookIcon tabIndex={8} />
         <S.TwitterIcon tabIndex={9} />
       </div>

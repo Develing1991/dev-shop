@@ -1,3 +1,4 @@
+import { MembUser } from "./../types";
 import { app } from "../../firebase";
 import {
   getFirestore,
@@ -7,7 +8,6 @@ import {
   getDoc,
   arrayUnion,
 } from "firebase/firestore";
-import { User } from "firebase/auth";
 const db = getFirestore(app);
 
 // const adminsRef = doc(db, "members", "users");
@@ -23,14 +23,17 @@ export const GET_MEMBERS = async () => {
   }
 };
 
-export const SET_MEMBERS = async (user: User, providerId: string | null) => {
+export const SET_MEMBERS = async (user: Partial<MembUser>) => {
   await updateDoc(membersRef, {
     users: arrayUnion({
       uid: user.uid,
       displayName: user.displayName,
       email: user.email,
       admin: false,
-      providerId,
+      providerId: user.providerId,
+      phoneNumber: user.phoneNumber ?? "",
+      address: user.address ?? "",
+      zonecode: user.zonecode ?? "",
     }),
   });
 };

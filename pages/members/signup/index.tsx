@@ -11,14 +11,24 @@ import { useRecoilState } from "recoil";
 import { modalState } from "@src/store/modals";
 import { Postcode } from "@src/components/daum/Postcode";
 import { Address } from "react-daum-postcode";
+import { CREATE_USER_WITH_EMAIL_AND_PASSWORD } from "@src/api/firebase/authentication";
+import { useRouter } from "next/router";
+import { isLoggedState } from "@src/store/authentication";
 
 export default function SignUpPage() {
+  const router = useRouter();
+  const [, setIsLogged] = useRecoilState(isLoggedState);
+
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(SignUpSchema),
     mode: "onChange",
   });
 
   const [, setModal] = useRecoilState(modalState);
+  const [memAddress, setMemAddress] = useState({
+    address: "",
+    zonecode: "",
+  });
 
   const [checkAll, setCheckAll] = useState(false);
   const [checkList, setCheckList] = useState<ITerms>({
@@ -33,7 +43,6 @@ export default function SignUpPage() {
 
   const onSubmitCreateMember = (data: ICreateMemberData) => {
     const { shop1, shop2 } = checkList;
-    console.log(shop1);
 
     if (!shop1 || !shop2) {
       setModal((prev) => ({
@@ -45,7 +54,32 @@ export default function SignUpPage() {
       }));
       return;
     }
-    console.log(data);
+
+    CREATE_USER_WITH_EMAIL_AND_PASSWORD(
+      {
+        displayName: data.displayName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        password: data.password,
+        passwordConfirm: data.passwordConfirm,
+        address: memAddress.address + data.addressDetail,
+        zonecode: memAddress.zonecode,
+      },
+      () => {
+        setModal((prev) => ({
+          ...prev,
+          open: true,
+          permanent: true,
+          title: "회원가입 완료",
+          contents: "메인 페이지로 이동합니다.",
+          action: () => {
+            setIsLogged(() => true);
+            router.push("/");
+          },
+          confirm: false,
+        }));
+      }
+    );
   };
 
   const onClickCheckTerms =
@@ -110,13 +144,11 @@ export default function SignUpPage() {
       isAction: false,
     }));
   };
-  const [memAddress, setMemAddress] = useState({
-    address: "",
-    zonecode: "",
-  });
+
   const onSetAddress = (data: Address) => {
     setMemAddress(() => ({
-      ...data,
+      address: data.address,
+      zonecode: data.zonecode,
     }));
   };
   return (
@@ -216,7 +248,7 @@ export default function SignUpPage() {
             readOnly
             defaultValue={memAddress.address}
           />
-          <input type="text" title="상세주소" />
+          <input type="text" title="상세주소" {...register("addressDetail")} />
         </div>
       </form>
       <div className="terms">

@@ -4,6 +4,7 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   TwitterAuthProvider,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   onAuthStateChanged,
@@ -13,6 +14,7 @@ import {
   // browserLocalPersistence,
 } from "firebase/auth";
 import { GET_MEMBERS, SET_MEMBERS } from "../database/members";
+import { IMembCreateEmail, IMembStateChange } from "../database/types";
 
 const auth = getAuth(app);
 
@@ -31,10 +33,21 @@ export const SIGN_IN_WITH_PROVIDER = (type: EProvider, cb: () => void) => {
   signInWithPopup(auth, new SignInProvider[type]())
     .then(async (result) => {
       const members = await GET_MEMBERS();
+      const { user } = result;
       if (members) {
         const uidList = members.users.map((user: User) => user.uid);
-        if (!uidList.includes(result.user.uid)) {
-          SET_MEMBERS(result.user, result.providerId);
+        if (!uidList.includes(user.uid)) {
+          const CreateUser = {
+            displayName: user.displayName ?? "",
+            email: user.email ?? "",
+            uid: user.uid,
+            admin: false,
+            providerId: type,
+            phoneNumber: "",
+            address: "",
+            zonecode: "",
+          };
+          SET_MEMBERS(CreateUser);
         }
       }
       cb();
@@ -44,27 +57,27 @@ export const SIGN_IN_WITH_PROVIDER = (type: EProvider, cb: () => void) => {
 
 export const SIGN_IN_WITH_EMAIL_AND_PASSWORD = async (
   email: string,
-  password: string
+  password: string,
+  cb: () => void,
+  errCb: () => void
 ) => {
   await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
+      // const user = userCredential.user;
+      // console.log(user);
+      cb();
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      errCb();
     });
 };
 
-interface MembUser extends User {
-  admin: boolean;
-}
-export const ON_AUTH_STATE_CHANGED = (cb: (user: MembUser) => void) => {
+export const ON_AUTH_STATE_CHANGED = (cb: (user: IMembStateChange) => void) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       GET_MEMBERS().then((members) => {
         const Memberuser = members?.users.find(
-          (muser: MembUser) => muser.uid === user.uid
+          (muser: IMembStateChange) => muser.uid === user.uid
         );
         cb(Memberuser);
       });
@@ -84,9 +97,36 @@ export const ON_SING_OUT = () => {
       console.log("로그아웃");
       localStorage.setItem("isLogged", JSON.stringify(false));
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(console.error);
+};
 
-      // An error happened.
-    });
+export const CREATE_USER_WITH_EMAIL_AND_PASSWORD = (
+  membUser: IMembCreateEmail,
+  cb: () => void
+) => {
+  createUserWithEmailAndPassword(auth, membUser.email, membUser.password)
+    .then(async (result) => {
+      const { user } = result;
+      const members = await GET_MEMBERS();
+      if (members) {
+        const uidList = members.users.map((user: User) => user.uid);
+        if (!uidList.includes(result.user.uid)) {
+          const CreateUser = {
+            displayName: membUser.displayName ?? "",
+            email: membUser.email ?? "",
+            uid: user.uid,
+            admin: false,
+            providerId: "emailAndPassword",
+            phoneNumber: membUser.phoneNumber,
+            address: membUser.address,
+            zonecode: membUser.zonecode,
+          };
+          SET_MEMBERS(CreateUser).then(() => {
+            cb();
+          });
+        }
+      }
+      // ...
+    })
+    .catch(console.error);
 };
